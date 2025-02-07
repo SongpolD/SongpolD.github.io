@@ -37,16 +37,38 @@
         .project {
             min-width: 100%;
             padding: 20px;
-            border-bottom: 1px solid #eee;
             text-align: center;
         }
-        .project img {
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab-button {
+            padding: 10px 15px;
+            margin: 5px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .tab-button.active {
+            background-color: #1a252f;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .tab-content img {
             width: 80%;
             max-height: 400px;
             object-fit: cover;
             border-radius: 10px;
             display: block;
-            margin: 0 auto 15px;
+            margin: 10px auto;
         }
         .nav {
             text-align: center;
@@ -89,20 +111,44 @@
         </header>
 
         <div class="slider">
+            <!-- โครงการ FTTR -->
             <div class="project">
                 <h2>โครงการ FTTR</h2>
-                <img src="./images/PR CMO ตรวจสุขภาพ.png" alt="Project 1">
-                <img src="./images/PR การเดินทางไปทำงานต่างประเทศ.jpg" alt="Project 1">
-                <img src="./images/Concept_หน้าเว็บไซต์ใหม่.png" alt="Project 1">
-                <p>Internal CMO group communication</p>
-                <p>Associate with: Canva</p>
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'fttr-artwork')">Artwork</button>
+                    <button class="tab-button" onclick="openTab(event, 'fttr-activity')">Activity</button>
+                </div>
+
+                <div id="fttr-artwork" class="tab-content active">
+                    <img src="./images/PR_CMO_ตรวจสุขภาพ.png" alt="FTTR Artwork 1">
+                    <img src="./images/PR_การเดินทางไปทำงานต่างประเทศ.jpg" alt="FTTR Artwork 2">
+                    <img src="./images/Concept_หน้าเว็บไซต์ใหม่.png" alt="FTTR Artwork 3">
+                    <p>งานออกแบบสำหรับการสื่อสารภายใน CMO</p>
+                </div>
+
+                <div id="fttr-activity" class="tab-content">
+                    <img src="./images/Activity_01.jpg" alt="FTTR Activity 1">
+                    <img src="./images/Activity_02.jpg" alt="FTTR Activity 2">
+                    <p>กิจกรรมที่จัดขึ้นภายในโครงการ FTTR</p>
+                </div>
             </div>
 
+            <!-- โครงการ NETA V -->
             <div class="project">
                 <h2>NETA V Test drive</h2>
-                <img src="./images/NETA_Testdrive.jpg" alt="Project 2">
-                <p>รายละเอียดโปรเจ็กต์</p>
-                <p>เทคโนโลยีที่ใช้:</p>
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'neta-photos')">Photos</button>
+                    <button class="tab-button" onclick="openTab(event, 'neta-info')">Information</button>
+                </div>
+
+                <div id="neta-photos" class="tab-content active">
+                    <img src="./images/NETA_Testdrive.jpg" alt="NETA V Test Drive">
+                    <p>ภาพบรรยากาศการทดสอบขับรถยนต์ NETA V</p>
+                </div>
+
+                <div id="neta-info" class="tab-content">
+                    <p>รายละเอียดโครงการเกี่ยวกับเทคโนโลยีใหม่ในการทดสอบขับขี่</p>
+                </div>
             </div>
         </div>
 
@@ -136,6 +182,18 @@
                 index = slides.children.length - 1; // ไปหน้าสุดท้าย
             }
             showSlide();
+        }
+
+        function openTab(event, tabId) {
+            let parent = event.target.closest(".project");
+            let tabButtons = parent.querySelectorAll(".tab-button");
+            let tabContents = parent.querySelectorAll(".tab-content");
+
+            tabButtons.forEach(button => button.classList.remove("active"));
+            tabContents.forEach(content => content.classList.remove("active"));
+
+            event.target.classList.add("active");
+            document.getElementById(tabId).classList.add("active");
         }
     </script>
 </body>
