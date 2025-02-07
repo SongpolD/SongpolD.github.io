@@ -22,7 +22,6 @@
             padding: 20px;
             background-color: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            overflow: hidden;
         }
         header {
             text-align: center;
@@ -38,6 +37,20 @@
             min-width: 100%;
             padding: 20px;
             text-align: center;
+        }
+        .dropdown {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .dropdown-content {
+            display: none;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
         }
         .tabs {
             display: flex;
@@ -70,12 +83,15 @@
             display: block;
             margin: 10px auto;
         }
-        .nav {
-            text-align: center;
-            padding: 20px;
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
             background-color: #2c3e50;
+            text-align: center;
+            padding: 15px 0;
         }
-        .nav a {
+        .footer a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
@@ -94,16 +110,9 @@
             cursor: pointer;
             border-radius: 5px;
         }
-        .controls button:hover {
-            background-color: #34495e;
-        }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="index.html">Resume</a>
-        <a href="portfolio.html">Portfolio</a>
-    </div>
     <div class="container">
         <header>
             <h1>Portfolio</h1>
@@ -111,56 +120,22 @@
         </header>
 
         <div class="slider">
-            <!-- CMO Human Resource Internship -->
             <div class="project">
-                <h2>CMO Human Resource Internship</h2>
-                <div class="tabs">
-                    <button class="tab-button active" onclick="openTab(event, 'CMO_aw')">Artwork</button>
-                    <button class="tab-button" onclick="openTab(event, 'CMO_Act')">Activity</button>
-                </div>
+                <div class="dropdown" onclick="toggleDropdown('CMO_dropdown')">CMO Human Resource Internship</div>
+                <div id="CMO_dropdown" class="dropdown-content">
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="openTab(event, 'CMO_aw')">Artwork</button>
+                        <button class="tab-button" onclick="openTab(event, 'CMO_Act')">Activity</button>
+                    </div>
 
-                <div id="CMO_aw" class="tab-content active">
-                    <p>Artwork for CMO internal communication</p>
-                    <img src="./images/PR CMO ตรวจสุขภาพ.png" alt="FTTR Artwork 1">
-                    <img src="./images/PR การเดินทางไปทำงานต่างประเทศ.jpg" alt="FTTR Artwork 2">
-                    <img src="./images/Concept_หน้าเว็บไซต์ใหม่.png" alt="FTTR Artwork 3">
-                </div>
+                    <div id="CMO_aw" class="tab-content active">
+                        <img src="./images/PR CMO ตรวจสุขภาพ.png" alt="Artwork 1">
+                    </div>
 
-                <div id="CMO_Act" class="tab-content">
-                    <p>Beer Taik: improve the relationship between director and employee</p>
-                    <img src="./images/Agenda Beer Talk.jpg" alt="Beer talk 1">
-                    <img src="./images/Bear Talk Art Work.pdf" alt="Beer talk 2">
-                    <img src="./images/ภาพทีมงาน Beer Talk.jpg" alt="Beer talk 3">
+                    <div id="CMO_Act" class="tab-content">
+                        <img src="./images/Agenda Beer Talk.jpg" alt="Beer talk 1">
+                    </div>
                 </div>
-            </div>
-
-            <!-- Account Executive -->
-            <div class="project">
-                <h2>ADME Account Executive</h2>
-                <div class="tabs">
-                    <button class="tab-button active" onclick="openTab(event, 'ADME_awbrief')">Artworks Brief</button>
-                    <button class="tab-button" onclick="openTab(event, 'ADME_direction')">Brand Direction</button>
-                    <button class="tab-button" onclick="openTab(event, 'ADME_report')">Client Report</button>
-                    <button class="tab-button" onclick="openTab(event, 'ADME_planner')">Planner</button>
-                </div>
-
-                <div id="ADME_awbrief" class="tab-content active">
-                    <p>Artwork Brief to communicate with internal team.</p>
-                    <img src="./images/NETA_Testdrive.jpg" alt="NETA V Test Drive">
-                </div>
-
-                <div id="ADME_direction" class="tab-content">
-                    <p>Client brand direction</p>
-                </div>
-                
-                <div id="ADME_report" class="tab-content">
-                    <p>Client report</p>
-                </div>     
-
-                <div id="ADME_planner" class="tab-content">
-                    <p>Planner</p>
-                </div> 
-                
             </div>
         </div>
 
@@ -170,34 +145,19 @@
         </div>
     </div>
 
+    <div class="footer">
+        <a href="index.html">Resume</a>
+        <a href="portfolio.html">Portfolio</a>
+    </div>
+
     <script>
-        let index = 0;
-        const slides = document.querySelector(".slider");
-
-        function showSlide() {
-            slides.style.transform = `translateX(${-index * 100}%)`;
-        }
-
-        function nextSlide() {
-            if (index < slides.children.length - 1) {
-                index++;
-            } else {
-                index = 0; // กลับไปหน้าแรก
-            }
-            showSlide();
-        }
-
-        function prevSlide() {
-            if (index > 0) {
-                index--;
-            } else {
-                index = slides.children.length - 1; // ไปหน้าสุดท้าย
-            }
-            showSlide();
+        function toggleDropdown(id) {
+            let dropdown = document.getElementById(id);
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
         }
 
         function openTab(event, tabId) {
-            let parent = event.target.closest(".project");
+            let parent = event.target.closest(".dropdown-content");
             let tabButtons = parent.querySelectorAll(".tab-button");
             let tabContents = parent.querySelectorAll(".tab-content");
 
@@ -206,6 +166,31 @@
 
             event.target.classList.add("active");
             document.getElementById(tabId).classList.add("active");
+        }
+
+        let index = 0;
+        const slides = document.querySelector(".slider");
+        
+        function showSlide() {
+            slides.style.transform = `translateX(${-index * 100}%)`;
+        }
+
+        function nextSlide() {
+            if (index < slides.children.length - 1) {
+                index++;
+            } else {
+                index = 0;
+            }
+            showSlide();
+        }
+
+        function prevSlide() {
+            if (index > 0) {
+                index--;
+            } else {
+                index = slides.children.length - 1;
+            }
+            showSlide();
         }
     </script>
 </body>
