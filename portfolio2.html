@@ -22,6 +22,8 @@
             padding: 20px;
             background-color: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 80px;
         }
         header {
             text-align: center;
@@ -45,6 +47,11 @@
             cursor: pointer;
             text-align: center;
             border-radius: 5px;
+            position: relative;
+        }
+        .dropdown .arrow {
+            margin-left: 10px;
+            font-weight: bold;
         }
         .dropdown-content {
             display: none;
@@ -90,6 +97,7 @@
             background-color: #2c3e50;
             text-align: center;
             padding: 15px 0;
+            z-index: 1000;
         }
         .footer a {
             color: white;
@@ -99,6 +107,8 @@
         .controls {
             text-align: center;
             margin-top: 20px;
+            position: relative;
+            z-index: 10;
         }
         .controls button {
             padding: 10px 15px;
@@ -120,29 +130,71 @@
         </header>
 
         <div class="slider">
+            <!-- Page 1: CMO Internship -->
             <div class="project">
-                <div class="dropdown" onclick="toggleDropdown('CMO_dropdown')">CMO Human Resource Internship</div>
+                <div class="dropdown" onclick="toggleDropdown('CMO_dropdown')">
+                    CMO Human Resource Internship <span class="arrow">▼</span>
+                </div>
                 <div id="CMO_dropdown" class="dropdown-content">
                     <div class="tabs">
                         <button class="tab-button active" onclick="openTab(event, 'CMO_aw')">Artwork</button>
                         <button class="tab-button" onclick="openTab(event, 'CMO_Act')">Activity</button>
                     </div>
-
                     <div id="CMO_aw" class="tab-content active">
                         <p>Internal artworks</p>
                         <img src="./images/PR CMO ตรวจสุขภาพ.png" alt="Artwork 1">
                         <img src="./images/PR การเดินทางไปทำงานต่างประเทศ.jpg" alt="Artwork 2">
                         <img src="./images/Concept_หน้าเว็บไซต์ใหม่.png" alt="Artwork 3">
                     </div>
-
                     <div id="CMO_Act" class="tab-content">
                         <p>Internal activity</p>
-                        <img src="./images/Agenda Beer Talk.jpg" alt="Beer talk 1">
-                        <img src="./images/Bear Talk Art Work.pdf" alt="Beer talk 2">
-                        <img src="./images/ภาพทีมงาน Beer Talk.jpg" alt="Beer talk 3">
+                        <img src="./images/Agenda Beer Talk.jpg" alt="Activity 1">
+                        <img src="./images/Bear Talk Art Work.pdf" alt="Activity 2">
+                        <img src="./images/ภาพทีมงาน Beer Talk.jpg" alt="Activity 3">
                     </div>
                 </div>
             </div>
+
+            <!-- Page 2: ADME Account Executive -->
+            <div class="project">
+                <div class="dropdown" onclick="toggleDropdown('ADME_dropdown')">
+                    ADME Account Executive <span class="arrow">▼</span>
+                </div>
+                <div id="ADME_dropdown" class="dropdown-content">
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="openTab(event, 'ADME_Marketing')">Marketing</button>
+                        <button class="tab-button" onclick="openTab(event, 'ADME_Design')">Design</button>
+                    </div>
+                    <div id="ADME_Marketing" class="tab-content active">
+                        <p>Marketing Campaigns</p>
+                        <img src="./images/ADME_Marketing_01.jpg" alt="Marketing 1">
+                    </div>
+                    <div id="ADME_Design" class="tab-content">
+                        <p>Design Works</p>
+                        <img src="./images/ADME_Design_01.jpg" alt="Design 1">
+                    </div>
+                </div>
+            </div>
+            <!-- Page 3: ADME Account Executive -->
+            <div class="project">
+                <div class="dropdown" onclick="toggleDropdown('1577_dropdown')">
+                    Online Media Advisor <span class="arrow">▼</span>
+                </div>
+                <div id="1577_dropdown" class="dropdown-content">
+                    <div class="tabs">
+                        <button class="tab-button active" onclick="openTab(event, '1577_Marketing')">Marketing</button>
+                        <button class="tab-button" onclick="openTab(event, '1577_Design')">Design</button>
+                    </div>
+                    <div id="1577_Marketing" class="tab-content active">
+                        <p>Marketing Campaigns</p>
+                        <img src="./images/ADME_Marketing_01.jpg" alt="Marketing 1">
+                    </div>
+                    <div id="1577_Design" class="tab-content">
+                        <p>Design Works</p>
+                        <img src="./images/ADME_Design_01.jpg" alt="Design 1">
+                    </div>
+                </div>
+            </div>            
         </div>
 
         <div class="controls">
@@ -159,7 +211,9 @@
     <script>
         function toggleDropdown(id) {
             let dropdown = document.getElementById(id);
+            let arrow = dropdown.previousElementSibling.querySelector(".arrow");
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+            arrow.textContent = dropdown.style.display === 'block' ? "▲" : "▼";
         }
 
         function openTab(event, tabId) {
@@ -172,31 +226,6 @@
 
             event.target.classList.add("active");
             document.getElementById(tabId).classList.add("active");
-        }
-
-        let index = 0;
-        const slides = document.querySelector(".slider");
-        
-        function showSlide() {
-            slides.style.transform = `translateX(${-index * 100}%)`;
-        }
-
-        function nextSlide() {
-            if (index < slides.children.length - 1) {
-                index++;
-            } else {
-                index = 0;
-            }
-            showSlide();
-        }
-
-        function prevSlide() {
-            if (index > 0) {
-                index--;
-            } else {
-                index = slides.children.length - 1;
-            }
-            showSlide();
         }
     </script>
 </body>
