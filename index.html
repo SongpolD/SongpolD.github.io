@@ -34,7 +34,6 @@
         }
 
         .profile-img {
-            
             width: 250px;
             height: 250px;
             border-radius: 50%;
@@ -50,18 +49,39 @@
 
         nav {
             text-align: center;
-            margin-bottom: 20px;
+            margin: 30px 0;
         }
 
         nav a {
-            color: #2c3e50;
+            color: white;
             text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
+            background-color: #2c3e50;
+            padding: 10px 25px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
 
         nav a:hover {
-            color: #34495e;
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: #34495e;
+        }
+
+        .linkedin-link {
+            color: #0077b5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .linkedin-link:hover {
+            color: #004d77;
             text-decoration: underline;
         }
 
@@ -132,7 +152,7 @@
             <p>📧 Email: songpol.business@hotmail.com</p>
             <p>📱 Phone: +66619849378</p>
             <p>📍 Address: 35/502 Klong Kum,Bueng Kum,Bangkok,10240</p>
-            <p>🔗 LinkedIn: linkedin.com/in/yourprofile</p>
+            <p>🔗 LinkedIn: <a href="https://linkedin.com/in/yourprofile" class="linkedin-link">linkedin.com/in/yourprofile</a></p>
         </div>
 
         <div class="section">
@@ -152,7 +172,6 @@
                         คิดอยู่
                 </ul> 
             </div>
-            <!-- งานที่ 2 -->
             <div class="experience-item">
                 <h3>Account Executive</h3>
                 <p>ADME MEDIA Company Limited | 2022 - 2023 (10 Month and a half)</p>
@@ -165,6 +184,7 @@
                 </ul>
             </div>
         </div>
+
         <div class="section">
             <h2>Education</h2>
             <div class="education-item">
@@ -185,7 +205,6 @@
                 <span class="skill-tag">Social Listeningg</span>
                 <span class="skill-tag">Website Tracking</span>
                 <span class="skill-tag">E - commerce</span>
-                <!-- เพิ่มทักษะอื่นๆ ตามต้องการ -->
             </div>
         </div>
     </div>
