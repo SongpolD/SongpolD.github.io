@@ -127,6 +127,19 @@
             border-radius: 10px;
             font-size: 0.7em;
         }
+        .education-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+        .education-content {
+            flex: 1;
+        }
+        .university-logo {
+            height: 50px; /* ปรับความสูงของโลโก้ตามต้องการ */
+            margin-left: 20px; /* เว้นระยะห่างระหว่างข้อความกับโลโก้ */
+        }
 
         @media (max-width: 768px) {
             .container {
@@ -201,9 +214,12 @@
         <div class="section">
             <h2>Education</h2>
             <div class="education-item">
-                <h3>Business Administration (BBA)</h3>
-                <p>Srinakharinwirot University | 2018</p>
-                <p>เกรดเฉลี่ย: 3.59</p>
+                <div class="education-content">
+                    <h3>Business Administration (BBA)</h3>
+                    <p>Srinakharinwirot University | 2018</p>
+                    <p>เกรดเฉลี่ย: 3.59</p>
+                </div>
+                <img src="SWU-logo.png" alt="SWU Logo" class="university-logo">
             </div>
         </div>
 
