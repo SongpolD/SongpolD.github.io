@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>หน้าแสดงวิดีโอ YouTube</title>
+  <title>Explore my creative</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@
       background-color: #f9f9f9;
     }
     .container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
       background-color: white;
       padding: 20px;
@@ -22,58 +22,88 @@
     h1 {
       color: #333;
       text-align: center;
+      margin-bottom: 30px;
+    }
+    .content-wrapper {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .video-info {
+      flex: 1;
+      min-width: 300px;
+      max-width: 600px;
     }
     .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* สัดส่วน 16:9 */
-      height: 0;
+      width: 340px;
+      height: 605px;
+      margin: 0 auto;
+      border-radius: 10px;
       overflow: hidden;
-      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
     .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
       border: none;
     }
     .video-title {
-      margin-top: 15px;
+      margin-top: 20px;
+      font-size: 24px;
       font-weight: bold;
     }
     .video-description {
-      margin-top: 10px;
+      margin-top: 15px;
       color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .video-meta {
+      margin-top: 20px;
+      color: #777;
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+      .video-container {
+        width: 100%;
+        max-width: 340px;
+        height: 605px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Ine, Kyoto</h1>
+    <h1>วิดีโอ YouTube Shorts</h1>
     
-    <div class="video-container">
-      <!-- แทนที่ YouTube-VIDEO-ID ด้วย ID ของวิดีโอ YouTube ที่ต้องการแสดง -->
-      <iframe src="https://youtube.com/shorts/ndxEV9VPABc" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen></iframe>
+    <div class="content-wrapper">
+      <div class="video-container">
+        <!-- ID วิดีโอจากลิงก์ที่ส่งมา: ndxEV9VPABc -->
+        <iframe 
+          src="https://www.youtube.com/embed/ndxEV9VPABc" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+      </div>
+      
+      <div class="video-info">
+        <div class="video-title">โปรเจ็กต์สร้างเว็บไซต์ด้วย GitHub Pages</div>
+        <div class="video-description">
+          วิดีโอสั้นแสดงการสร้างและอัปโหลดเว็บไซต์บน GitHub Pages ทำให้คุณสามารถแชร์ผลงานของตัวเองได้อย่างง่ายดาย เหมาะสำหรับผู้ที่ต้องการเริ่มต้นสร้างพอร์ตโฟลิโอออนไลน์ 
+          <br><br>
+          เว็บไซต์นี้จัดทำโดยใช้ GitHub Pages และสามารถปรับแต่งได้ตามความต้องการของคุณ
+        </div>
+        <div class="video-meta">
+          <p>อัปโหลดเมื่อ: เมษายน 2025</p>
+          <p>หมวดหมู่: เทคโนโลยี, การพัฒนาเว็บไซต์</p>
+        </div>
+      </div>
     </div>
-    
-    <div class="video-title">ชื่อวิดีโอ</div>
-    <div class="video-description">คำอธิบายวิดีโอ</div>
-    
-    <!-- คุณสามารถเพิ่มวิดีโอเพิ่มเติมได้โดยคัดลอกและวางโค้ดด้านล่างนี้ -->
-    <!-- 
-    <div class="video-container">
-      <iframe src="https://youtube.com/shorts/ndxEV9VPABc" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen></iframe>
-    </div>
-    <div class="video-title">ชื่อวิดีโอ 2</div>
-    <div class="video-description">คำอธิบายวิดีโอ 2</div>
-    -->
   </div>
 </body>
 </html>
