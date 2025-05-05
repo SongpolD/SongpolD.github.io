@@ -17,7 +17,7 @@
             background-color: #f5f5f5;
         }
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             background-color: white;
@@ -30,57 +30,59 @@
             padding: 40px 0;
             background-color: #2c3e50;
             color: white;
+            margin-bottom: 30px;
+            border-radius: 5px;
         }
-        .slider-container {
-            width: 100%;
+        .section {
+            margin-bottom: 50px;
+            border-radius: 5px;
             overflow: hidden;
-            position: relative;
         }
-        .slider {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-            width: 300%; /* ขยายความกว้างตามจำนวน slides */
-        }
-        .project {
-            min-width: 33.333%; /* แต่ละ slide ใช้พื้นที่ 1/3 ของความกว้างทั้งหมด */
-            padding: 20px;
-            text-align: center;
-        }
-        .dropdown {
+        .section-header {
             background-color: #2c3e50;
             color: white;
-            padding: 10px;
+            padding: 15px 20px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             cursor: pointer;
-            text-align: center;
             border-radius: 5px;
-            position: relative;
         }
-        .dropdown .arrow {
-            margin-left: 10px;
-            font-weight: bold;
-        }
-        .dropdown-content {
+        .section-content {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-top: none;
             display: none;
-            padding: 15px;
-            background-color: #f5f5f5;
-            border-radius: 5px;
+            border-radius: 0 0 5px 5px;
+        }
+        .section.active .section-content {
+            display: block;
+        }
+        .section.active .section-header {
+            border-radius: 5px 5px 0 0;
         }
         .tabs {
             display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
+            background-color: #eee;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 15px;
         }
         .tab-button {
+            flex: 1;
             padding: 10px 15px;
-            margin: 5px;
-            background-color: #2c3e50;
-            color: white;
+            background-color: #eee;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: bold;
         }
         .tab-button.active {
-            background-color: #1a252f;
+            background-color: #2c3e50;
+            color: white;
         }
         .tab-content {
             display: none;
@@ -89,16 +91,31 @@
             display: block;
         }
         .tab-content img {
-            width: 80%;
-            max-height: 1000px;
-            object-fit: cover;
-            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            margin: 15px auto;
             display: block;
-            margin: 10px auto;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .content-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.05);
+        }
+        .content-box h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .content-box p {
+            margin-bottom: 15px;
         }
         .footer {
             position: fixed;
             bottom: 0;
+            left: 0;
             width: 100%;
             background-color: #2c3e50;
             text-align: center;
@@ -110,23 +127,10 @@
             text-decoration: none;
             margin: 0 15px;
         }
-        .controls {
-            text-align: center;
-            margin-top: 20px;
-            position: relative;
-            z-index: 10;
+        svg {
+            max-width: 100%;
+            height: auto;
         }
-        .controls button {
-            padding: 10px 15px;
-            margin: 5px;
-            font-size: 16px;
-            background-color: #2c3e50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
     </style>
 </head>
 <body>
@@ -136,190 +140,222 @@
             <p>Past Works and Projects</p>
         </header>
 
-        <div class="slider-container">
-            <div class="slider">
-                <!-- Page 1: CMO Internship -->
-                <div class="project">
-                    <div class="dropdown" onclick="toggleDropdown('CMO_dropdown')">
-                        CMO Human Resource Internship <span class="arrow">▼</span>
-                    </div>
-                    <div id="CMO_dropdown" class="dropdown-content">
-                        <div class="tabs">
-                            <button class="tab-button active" onclick="openTab(event, 'CMO_aw')">Artwork</button>
-                            <button class="tab-button" onclick="openTab(event, 'CMO_Act')">Activity</button>
-                        </div>
-                        <div id="CMO_aw" class="tab-content active">
-                            <p>ดำเนินงานช่วง 2022 - 2023</p>
-                            <p>Internal artworks</p>
-                            <img src="./images/PR CMO ตรวจสุขภาพ.png" alt="Artwork 1">
-                            <img src="./images/PR การเดินทางไปทำงานต่างประเทศ.jpg" alt="Artwork 2">
-                            <img src="./images/Concept_หน้าเว็บไซต์ใหม่.png" alt="Artwork 3">
-                        </div>
-                        <div id="CMO_Act" class="tab-content">
-                            <p>Internal activity</p>
-                            <img src="./images/Agenda Beer Talk.jpg" alt="Activity 1">
-                            <img src="./images/Bear Talk Art Work.pdf" alt="Activity 2">
-                            <img src="./images/ภาพทีมงาน Beer Talk.jpg" alt="Activity 3">
-                        </div>
+        <!-- CMO Internship Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('cmo-section')">
+                CMO Human Resource Internship
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div id="cmo-section" class="section-content">
+                <div class="content-box">
+                    <h3>ดำเนินงานช่วง 2022 - 2023</h3>
+                    <p>During my time as an HR Intern at CMO, I was responsible for creating internal communications and supporting company activities.</p>
+                </div>
+                
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'cmo-artwork')">Artwork</button>
+                    <button class="tab-button" onclick="openTab(event, 'cmo-activity')">Activity</button>
+                </div>
+                
+                <div id="cmo-artwork" class="tab-content active">
+                    <div class="content-box">
+                        <h3>Internal Artworks</h3>
+                        <p>ออกแบบสื่อประชาสัมพันธ์ภายในองค์กร</p>
+                        <img src="./images/PR CMO ตรวจสุขภาพ.png" alt="Health Check PR">
+                        <img src="./images/PR การเดินทางไปทำงานต่างประเทศ.jpg" alt="International Work Travel PR">
+                        <img src="./images/Concept_หน้าเว็บไซต์ใหม่.png" alt="New Website Concept">
                     </div>
                 </div>
-
-                <!-- Page 2: ADME Account Executive -->
-                <div class="project">
-                    <div class="dropdown" onclick="toggleDropdown('ADME_dropdown')">
-                        ADME Account Executive <span class="arrow">▼</span>
-                    </div>
-                    <div id="ADME_dropdown" class="dropdown-content">
-                        <div class="tabs">
-                            <button class="tab-button active" onclick="openTab(event, 'ADME_Marketing')">Marketing</button>
-                            <button class="tab-button" onclick="openTab(event, 'ADME_Design')">Design</button>
-                        </div>
-                        <div id="ADME_Marketing" class="tab-content active">
-                            <p>All account management and internal team communicate</p>
-                            <img src="./images/Client AH - Topic_ อาหารต้านหวัด.pdf" alt="Marketing 1">
-                        </div>
-                        <div id="ADME_Design" class="tab-content">
-                            <p>Design Works Data coming soo</p>
-                            <img src="./images/ADME_Design_01.jpg" alt="Design 1">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Page 3: Online Media Advisor -->
-                <div class="project">
-                    <div class="dropdown" onclick="toggleDropdown('1577_dropdown')">
-                        Online Media Advisor <span class="arrow">▼</span>
-                    </div>
-                    <div id="1577_dropdown" class="dropdown-content">
-                        <div class="tabs">
-                            <button class="tab-button active" onclick="openTab(event, '1577_Marketing')">Marketing</button>
-                            <button class="tab-button" onclick="openTab(event, '1577_Design')">Design</button>
-                        </div>
-                        <div id="1577_Marketing" class="tab-content active">
-                            <p>Summary all marketing solution</p>
-                            <img src="./images/ADME_Marketing_01.jpg" alt="Marketing 1">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1000">
-                                <!-- Background -->
-                                <rect width="900" height="1000" fill="#f8f9fa" rx="10" ry="10"/>
-                            
-                                <!-- Header -->
-                                <rect x="50" y="30" width="800" height="70" fill="#3f51b5" rx="8" ry="8"/>
-                                <text x="450" y="75" font-family="Arial" font-size="28" font-weight="bold" text-anchor="middle" fill="white">
-                                    กลยุทธ์การร่วมมือระหว่าง 1577 Shop และ TaksaToys Brand
-                                </text>
-                            
-                                <!-- Section 1: Current Situation -->
-                                <rect x="50" y="120" width="800" height="40" fill="#9fa8da" rx="5" ry="5"/>
-                                <text x="450" y="145" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#283593">
-                                    1. สถานการณ์ปัจจุบัน
-                                </text>
-                            
-                                <!-- Left box - TaksaToys past -->
-                                <rect x="100" y="180" width="350" height="130" fill="#ffcdd2" rx="8" ry="8" stroke="#e57373" stroke-width="2"/>
-                                <text x="275" y="205" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#d32f2f">TaksaToys Brand (เดิม)</text>
-                                <text x="275" y="235" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• การยิง Ads แบบ Inbox</text>
-                                <text x="275" y="265" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• ผลตอบรับไม่ดี</text>
-                                <text x="275" y="295" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#d32f2f">ประสิทธิภาพต่ำ ↓</text>
-                                
-                                <!-- Right box - 1577 Shop current -->
-                                <rect x="500" y="180" width="350" height="130" fill="#c8e6c9" rx="8" ry="8" stroke="#81c784" stroke-width="2"/>
-                                <text x="675" y="205" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#2e7d32">1577 Shop (ปัจจุบัน)</text>
-                                <text x="675" y="235" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• การยิง Ads แบบ CPAS</text>
-                                <text x="675" y="265" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• ROAS ดี</text>
-                                <text x="675" y="295" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">ประสิทธิภาพสูง ↑</text>
-                            
-                                <!-- Section 2: Strategy -->
-                                <rect x="50" y="330" width="800" height="40" fill="#9fa8da" rx="5" ry="5"/>
-                                <text x="450" y="355" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#283593">
-                                    2. กลยุทธ์เพื่อแก้ไข
-                                </text>
-                            
-                                <!-- Left Box - Partnership Ads -->
-                                <rect x="80" y="390" width="350" height="220" fill="#bbdefb" rx="8" ry="8" stroke="#64b5f6" stroke-width="2"/>
-                                <text x="255" y="415" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e88e5">
-                                    กลยุทธ์ Partnership Ads
-                                </text>
-                                <text x="255" y="440" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">
-                                    เริ่มต้นกระบวนการที่ Ads Manager
-                                </text>
-                            
-                                <!-- Format Box -->
-                                <rect x="100" y="460" width="310" height="60" fill="#e3f2fd" rx="5" ry="5"/>
-                                <text x="255" y="480" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#1565c0">
-                                    Format หลากหลายรูปแบบ:
-                                </text>
-                                <text x="255" y="500" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
-                                    • Static Image, Video
-                                </text>
-                                <text x="255" y="520" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
-                                    • Carousel, Collection
-                                </text>
-                            
-                                <!-- Public Box -->
-                                <rect x="100" y="530" width="310" height="60" fill="#e3f2fd" rx="5" ry="5"/>
-                                <text x="255" y="550" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#1565c0">
-                                    รูปแบบการ Public:
-                                </text>
-                                <text x="255" y="570" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
-                                    • โพสต์ต้องอยู่บนเพจที่เป็น First Identity
-                                </text>
-                            
-                                <!-- Right Box - Branded Post -->
-                                <rect x="470" y="390" width="350" height="220" fill="#e1bee7" rx="8" ry="8" stroke="#ba68c8" stroke-width="2"/>
-                                <text x="645" y="415" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#8e24aa">
-                                    กลยุทธ์ Branded Post
-                                </text>
-                                <text x="645" y="440" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">
-                                    เริ่มต้นกระบวนการที่ Page
-                                </text>
-                            
-                                <!-- Format Box -->
-                                <rect x="490" y="460" width="310" height="60" fill="#f3e5f5" rx="5" ry="5"/>
-                                <text x="645" y="480" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#6a1b9a">
-                                    Format ที่ทำได้:
-                                </text>
-                                <text x="645" y="500" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
-                                    • Single Banner, Infographic
-                                </text>
-                                <text x="645" y="520" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
-                                    • Video
-                                </text>
-                            
-                                <!-- Public Box -->
-                                <rect x="490" y="530" width="310" height="60" fill="#f3e5f5" rx="5" ry="5"/>
-                                <text x="645" y="550" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#6a1b9a">
-                                    รูปแบบการ Public:
-                                </text>
-                                <text x="645" y="570" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
-                                    • โพสต์ต้องอยู่บนเพจทั้งสอง
-                                </text>
-                            
-                                <!-- Section 3: Expected Results -->
-                                <rect x="50" y="630" width="800" height="40" fill="#9fa8da" rx="5" ry="5"/>
-                                <text x="450" y="655" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#283593">
-                                    3. ผลลัพธ์ที่คาดหวัง
-                                </text>
-                                
-                                <!-- Expected Results Content -->
-                                <rect x="100" y="690" width="750" height="130" fill="#e8eaf6" rx="8" ry="8" stroke="#3949ab" stroke-width="2"/>
-                                <text x="450" y="720" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#3949ab">ผลลัพธ์จากการร่วมมือ</text>
-                                <text x="450" y="750" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• เพิ่มประสิทธิภาพในการทำ Marketing ของ TaksaToys Brand</text>
-                                <text x="450" y="780" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• ขยายฐานลูกค้าผ่านการใช้กลยุทธ์ของ 1577 Shop</text>
-                                <text x="450" y="810" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• เพิ่มยอดขายและการรับรู้แบรนด์ของทั้งสองฝ่าย</text>
-                            </svg>
-                        </div>
-                        <div id="1577_Design" class="tab-content">
-                            <p>Summary all crreative design</p>
-                            <img src="./images/ADME_Design_01.jpg" alt="Design 1">
-                        </div>
+                
+                <div id="cmo-activity" class="tab-content">
+                    <div class="content-box">
+                        <h3>Internal Activities</h3>
+                        <p>จัดกิจกรรมภายในบริษัท และประสานงานทีม</p>
+                        <img src="./images/Agenda Beer Talk.jpg" alt="Beer Talk Agenda">
+                        <img src="./images/ภาพทีมงาน Beer Talk.jpg" alt="Beer Talk Team">
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="controls">
-            <button onclick="prevSlide()">⬅ Previous</button>
-            <button onclick="nextSlide()">Next ➡</button>
+        <!-- ADME Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('adme-section')">
+                ADME Account Executive
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div id="adme-section" class="section-content">
+                <div class="content-box">
+                    <h3>Account Management Experience</h3>
+                    <p>Responsible for client communication and project management at ADME.</p>
+                </div>
+                
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'adme-marketing')">Marketing</button>
+                    <button class="tab-button" onclick="openTab(event, 'adme-design')">Design</button>
+                </div>
+                
+                <div id="adme-marketing" class="tab-content active">
+                    <div class="content-box">
+                        <h3>Account Management</h3>
+                        <p>All account management and internal team communication for various clients.</p>
+                        <img src="./images/Client AH - Topic_ อาหารต้านหวัด.pdf" alt="Client Health Food Against Flu Topic">
+                    </div>
+                </div>
+                
+                <div id="adme-design" class="tab-content">
+                    <div class="content-box">
+                        <h3>Design Works</h3>
+                        <p>Creative design solutions for clients</p>
+                        <img src="./images/ADME_Design_01.jpg" alt="ADME Design Example">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Online Media Advisor Section -->
+        <div class="section">
+            <div class="section-header" onclick="toggleSection('mindedge-section')">
+                Online Media Advisor
+                <span class="toggle-icon">▼</span>
+            </div>
+            <div id="mindedge-section" class="section-content">
+                <div class="content-box">
+                    <h3>Digital Marketing Strategy</h3>
+                    <p>Creating and implementing digital marketing strategies for various clients.</p>
+                </div>
+                
+                <div class="tabs">
+                    <button class="tab-button active" onclick="openTab(event, 'mindedge-marketing')">Marketing</button>
+                    <button class="tab-button" onclick="openTab(event, 'mindedge-design')">Design</button>
+                </div>
+                
+                <div id="mindedge-marketing" class="tab-content active">
+                    <div class="content-box">
+                        <h3>Marketing Solutions</h3>
+                        <p>Summary of all marketing solutions developed</p>
+                        <img src="./images/ADME_Marketing_01.jpg" alt="Marketing Strategy">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1000">
+                            <!-- Background -->
+                            <rect width="900" height="1000" fill="#f8f9fa" rx="10" ry="10"/>
+                        
+                            <!-- Header -->
+                            <rect x="50" y="30" width="800" height="70" fill="#3f51b5" rx="8" ry="8"/>
+                            <text x="450" y="75" font-family="Arial" font-size="28" font-weight="bold" text-anchor="middle" fill="white">
+                                กลยุทธ์การร่วมมือระหว่าง 1577 Shop และ TaksaToys Brand
+                            </text>
+                        
+                            <!-- Section 1: Current Situation -->
+                            <rect x="50" y="120" width="800" height="40" fill="#9fa8da" rx="5" ry="5"/>
+                            <text x="450" y="145" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#283593">
+                                1. สถานการณ์ปัจจุบัน
+                            </text>
+                        
+                            <!-- Left box - TaksaToys past -->
+                            <rect x="100" y="180" width="350" height="130" fill="#ffcdd2" rx="8" ry="8" stroke="#e57373" stroke-width="2"/>
+                            <text x="275" y="205" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#d32f2f">TaksaToys Brand (เดิม)</text>
+                            <text x="275" y="235" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• การยิง Ads แบบ Inbox</text>
+                            <text x="275" y="265" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• ผลตอบรับไม่ดี</text>
+                            <text x="275" y="295" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#d32f2f">ประสิทธิภาพต่ำ ↓</text>
+                            
+                            <!-- Right box - 1577 Shop current -->
+                            <rect x="500" y="180" width="350" height="130" fill="#c8e6c9" rx="8" ry="8" stroke="#81c784" stroke-width="2"/>
+                            <text x="675" y="205" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#2e7d32">1577 Shop (ปัจจุบัน)</text>
+                            <text x="675" y="235" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• การยิง Ads แบบ CPAS</text>
+                            <text x="675" y="265" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• ROAS ดี</text>
+                            <text x="675" y="295" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#2e7d32">ประสิทธิภาพสูง ↑</text>
+                        
+                            <!-- Section 2: Strategy -->
+                            <rect x="50" y="330" width="800" height="40" fill="#9fa8da" rx="5" ry="5"/>
+                            <text x="450" y="355" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#283593">
+                                2. กลยุทธ์เพื่อแก้ไข
+                            </text>
+                        
+                            <!-- Left Box - Partnership Ads -->
+                            <rect x="80" y="390" width="350" height="220" fill="#bbdefb" rx="8" ry="8" stroke="#64b5f6" stroke-width="2"/>
+                            <text x="255" y="415" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e88e5">
+                                กลยุทธ์ Partnership Ads
+                            </text>
+                            <text x="255" y="440" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">
+                                เริ่มต้นกระบวนการที่ Ads Manager
+                            </text>
+                        
+                            <!-- Format Box -->
+                            <rect x="100" y="460" width="310" height="60" fill="#e3f2fd" rx="5" ry="5"/>
+                            <text x="255" y="480" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#1565c0">
+                                Format หลากหลายรูปแบบ:
+                            </text>
+                            <text x="255" y="500" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+                                • Static Image, Video
+                            </text>
+                            <text x="255" y="520" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+                                • Carousel, Collection
+                            </text>
+                        
+                            <!-- Public Box -->
+                            <rect x="100" y="530" width="310" height="60" fill="#e3f2fd" rx="5" ry="5"/>
+                            <text x="255" y="550" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#1565c0">
+                                รูปแบบการ Public:
+                            </text>
+                            <text x="255" y="570" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+                                • โพสต์ต้องอยู่บนเพจที่เป็น First Identity
+                            </text>
+                        
+                            <!-- Right Box - Branded Post -->
+                            <rect x="470" y="390" width="350" height="220" fill="#e1bee7" rx="8" ry="8" stroke="#ba68c8" stroke-width="2"/>
+                            <text x="645" y="415" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#8e24aa">
+                                กลยุทธ์ Branded Post
+                            </text>
+                            <text x="645" y="440" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">
+                                เริ่มต้นกระบวนการที่ Page
+                            </text>
+                        
+                            <!-- Format Box -->
+                            <rect x="490" y="460" width="310" height="60" fill="#f3e5f5" rx="5" ry="5"/>
+                            <text x="645" y="480" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#6a1b9a">
+                                Format ที่ทำได้:
+                            </text>
+                            <text x="645" y="500" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+                                • Single Banner, Infographic
+                            </text>
+                            <text x="645" y="520" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+                                • Video
+                            </text>
+                        
+                            <!-- Public Box -->
+                            <rect x="490" y="530" width="310" height="60" fill="#f3e5f5" rx="5" ry="5"/>
+                            <text x="645" y="550" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#6a1b9a">
+                                รูปแบบการ Public:
+                            </text>
+                            <text x="645" y="570" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+                                • โพสต์ต้องอยู่บนเพจทั้งสอง
+                            </text>
+                        
+                            <!-- Section 3: Expected Results -->
+                            <rect x="50" y="630" width="800" height="40" fill="#9fa8da" rx="5" ry="5"/>
+                            <text x="450" y="655" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#283593">
+                                3. ผลลัพธ์ที่คาดหวัง
+                            </text>
+                            
+                            <!-- Expected Results Content -->
+                            <rect x="100" y="690" width="750" height="130" fill="#e8eaf6" rx="8" ry="8" stroke="#3949ab" stroke-width="2"/>
+                            <text x="450" y="720" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#3949ab">ผลลัพธ์จากการร่วมมือ</text>
+                            <text x="450" y="750" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• เพิ่มประสิทธิภาพในการทำ Marketing ของ TaksaToys Brand</text>
+                            <text x="450" y="780" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• ขยายฐานลูกค้าผ่านการใช้กลยุทธ์ของ 1577 Shop</text>
+                            <text x="450" y="810" font-family="Arial" font-size="16" text-anchor="middle" fill="#333">• เพิ่มยอดขายและการรับรู้แบรนด์ของทั้งสองฝ่าย</text>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div id="mindedge-design" class="tab-content">
+                    <div class="content-box">
+                        <h3>Creative Design</h3>
+                        <p>Summary of all creative designs developed</p>
+                        <img src="./images/ADME_Design_01.jpg" alt="Creative Design Example">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -330,45 +366,50 @@
     </div>
 
     <script>
-        let currentSlide = 0;
-        const totalSlides = document.querySelectorAll('.project').length;
-        const slider = document.querySelector('.slider');
-
-        function updateSlider() {
-            slider.style.transform = `translateX(-${currentSlide * 33.333}%)`;
-        }
-
-        function nextSlide() {
-            if (currentSlide < totalSlides - 1) {
-                currentSlide++;
-                updateSlider();
+        // Open the first section by default
+        document.getElementById('cmo-section').style.display = 'block';
+        document.querySelector('.section').classList.add('active');
+        
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            const parentSection = section.parentElement;
+            const isActive = parentSection.classList.contains('active');
+            
+            // Close all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            document.querySelectorAll('.section-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Toggle current section
+            if (!isActive) {
+                section.style.display = 'block';
+                parentSection.classList.add('active');
+            }
+            
+            // Update toggle icons
+            document.querySelectorAll('.toggle-icon').forEach(icon => {
+                icon.textContent = '▼';
+            });
+            
+            if (!isActive) {
+                parentSection.querySelector('.toggle-icon').textContent = '▲';
             }
         }
-
-        function prevSlide() {
-            if (currentSlide > 0) {
-                currentSlide--;
-                updateSlider();
-            }
-        }
-
-        function toggleDropdown(id) {
-            let dropdown = document.getElementById(id);
-            let arrow = dropdown.previousElementSibling.querySelector(".arrow");
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-            arrow.textContent = dropdown.style.display === 'block' ? "▲" : "▼";
-        }
-
+        
         function openTab(event, tabId) {
-            let parent = event.target.closest(".dropdown-content");
-            let tabButtons = parent.querySelectorAll(".tab-button");
-            let tabContents = parent.querySelectorAll(".tab-content");
-
-            tabButtons.forEach(button => button.classList.remove("active"));
-            tabContents.forEach(content => content.classList.remove("active"));
-
-            event.target.classList.add("active");
-            document.getElementById(tabId).classList.add("active");
+            const tabContent = event.target.closest('.section-content');
+            const tabButtons = tabContent.querySelectorAll('.tab-button');
+            const tabContents = tabContent.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => button.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
         }
     </script>
 </body>
