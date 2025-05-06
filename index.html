@@ -201,26 +201,25 @@
             background-color: #2196F3; /* สีน้ำเงินเรียบหรู */
         }
 
-            nav {
-        background-color: #333;
-        padding: 10px;
-        text-align: center;
+        nav {
+            display: flex;
+            justify-content: center; /* หรือ space-around / space-between */
+            gap: 20px; /* ระยะห่างระหว่างเมนู */
+            background-color: #333;
+            padding: 10px 0;
+            flex-wrap: wrap; /* ป้องกันลิงก์ล้นจอ */
         }
-    
-            nav a {
-        color: white;
-        margin: 0 15px;
-        text-decoration: none;
-        font-weight: bold;
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
         }
-            
-            nav a:hover {
-        text-decoration: underline;
-        color: #ffd700;
+        
+        nav a:hover {
+            color: #ffd700;
         }
-
-
-
 
             
     </style>
