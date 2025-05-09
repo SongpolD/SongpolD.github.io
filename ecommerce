@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple E-commerce | หน้าหลัก</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Prompt', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #3498db;
+        }
+        
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 12px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: #3498db;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2c3e50;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #1a252f;
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            color: #e74c3c;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .add-to-cart {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Product Detail */
+        .product-detail {
+            padding: 60px 0;
+            display: none;
+        }
+        
+        .product-detail-container {
+            display: flex;
+            gap: 40px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .detail-img {
+            width: 40%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        
+        .detail-info {
+            width: 60%;
+        }
+        
+        .detail-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .detail-price {
+            color: #e74c3c;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .detail-desc {
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .quantity {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .quantity-btn {
+            background-color: #f1f1f1;
+            border: none;
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+        .quantity-input {
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            margin: 0 10px;
+            border: 1px solid #ddd;
+        }
+        
+        .back-btn {
+            margin-right: 15px;
+            background-color: #95a5a6;
+        }
+        
+        .back-btn:hover {
+            background-color: #7f8c8d;
+        }
+        
+        /* Cart */
+        .cart {
+            padding: 60px 0;
+            display: none;
+        }
+        
+        .cart-item {
+            display: flex;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cart-item-img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 20px;
+        }
+        
+        .cart-item-info {
+            flex: 1;
+        }
+        
+        .cart-item-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .cart-item-price {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        
+        .cart-item-remove {
+            color: #e74c3c;
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+        
+        .cart-summary {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .summary-total {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        .checkout-btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            background-color: #2ecc71;
+        }
+        
+        .checkout-btn:hover {
+            background-color: #27ae60;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .empty-cart p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .product-detail-container {
+                flex-direction: column;
+            }
+            
+            .detail-img, .detail-info {
+                width: 100%;
+            }
+            
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .cart-item-img {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">ThaiShop</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showHome()">หน้าหลัก</a></li>
+                <li><a href="#" onclick="showProducts()">สินค้า</a></li>
+                <li><a href="#" onclick="showCart()" class="cart-icon">
+                    ตะกร้าสินค้า
+                    <span class="cart-count">0</span>
+                </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>ยินดีต้อนรับสู่ ThaiShop</h1>
+            <p>ร้านค้าออนไลน์ที่ดีที่สุดสำหรับผลิตภัณฑ์คุณภาพสูง</p>
+            <a href="#" class="btn" onclick="showProducts()">ช้อปเลย</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">สินค้าของเรา</h2>
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Section -->
+    <section class="product-detail" id="product-detail">
+        <div class="container">
+            <div class="product-detail-container" id="product-detail-container">
+                <!-- Product detail will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart" id="cart">
+        <div class="container">
+            <h2 class="section-title">ตะกร้าสินค้า</h2>
+            <div id="cart-items">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div id="cart-summary">
+                <!-- Cart summary will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#">เกี่ยวกับเรา</a></li>
+                <li><a href="#">นโยบายความเป็นส่วนตัว</a></li>
+                <li><a href="#">ติดต่อเรา</a></li>
+            </ul>
+            <p class="copyright">&copy; 2025 ThaiShop. สงวนลิขสิทธิ์ทั้งหมด</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample product data
+        const products = [
+            {
+                id: 1,
+                name: "เสื้อยืดสีขาว",
+                price: 350,
+                description: "เสื้อยืดคอกลมสีขาวผลิตจากผ้าฝ้าย 100% นุ่มสบาย สวมใส่ได้ทุกโอกาส",
+                image: "/api/placeholder/400/320",
+                stock: 25
+            },
+            {
+                id: 2,
+                name: "กางเกงยีนส์",
+                price: 950,
+                description: "กางเกงยีนส์ทรงตรงสีกรมท่า ผลิตจากผ้ายีนส์คุณภาพดี ทนทาน",
+                image: "/api/placeholder/400/320",
+                stock: 15
+            },
+            {
+                id: 3,
+                name: "รองเท้าผ้าใบ",
+                price: 1290,
+                description: "รองเท้าผ้าใบสีขาวดีไซน์เรียบง่าย สวมใส่สบาย เข้าได้กับทุกชุด",
+                image: "/api/placeholder/400/320",
+                stock: 10
+            },
+            {
+                id: 4,
+                name: "กระเป๋าสะพาย",
+                price: 790,
+                description: "กระเป๋าสะพายหนังสังเคราะห์คุณภาพดี ดีไซน์ทันสมัย จุของได้เยอะ",
+                image: "/api/placeholder/400/320",
+                stock: 8
+            },
+            {
+                id: 5,
+                name: "หมวกแก๊ป",
+                price: 290,
+                description: "หมวกแก๊ปสีดำ ปรับขนาดได้ ผลิตจากผ้าคุณภาพดี ระบายอากาศได้ดี",
+                image: "/api/placeholder/400/320",
+                stock: 30
+            },
+            {
+                id: 6,
+                name: "แว่นตากันแดด",
+                price: 590,
+                description: "แว่นตากันแดดกรอบสีดำ เลนส์ป้องกัน UV กันแดดได้ดี ทนทาน",
+                image: "/api/placeholder/400/320",
+                stock: 12
+            }
+        ];
+
+        // Cart array to store cart items
+        let cart = [];
+
+        // Function to display products
+        function displayProducts() {
+            const productsGrid = document.getElementById('products-grid');
+            productsGrid.innerHTML = '';
+
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-img">
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-price">฿${product.price.toLocaleString()}</p>
+                        <button class="add-to-cart" onclick="viewProduct(${product.id})">ดูรายละเอียด</button>
+                    </div>
+                `;
+                productsGrid.appendChild(productCard);
+            });
+        }
+
+        // Function to view product detail
+        function viewProduct(productId) {
+            const product = products.find(p => p.id === productId);
+            const productDetailContainer = document.getElementById('product-detail-container');
+            
+            productDetailContainer.innerHTML = `
+                <img src="${product.image}" alt="${product.name}" class="detail-img">
+                <div class="detail-info">
+                    <h2 class="detail-title">${product.name}</h2>
+                    <p class="detail-price">฿${product.price.toLocaleString()}</p>
+                    <p class="detail-desc">${product.description}</p>
+                    <div class="quantity">
+                        <span>จำนวน:</span>
+                        <button class="quantity-btn" onclick="decreaseQuantity()">-</button>
+                        <input type="number" value="1" min="1" max="${product.stock}" class="quantity-input" id="product-quantity">
+                        <button class="quantity-btn" onclick="increaseQuantity(${product.stock})">+</button>
+                    </div>
+                    <button class="btn back-btn" onclick="showProducts()">กลับ</button>
+                    <button class="btn" onclick="addToCart(${product.id})">เพิ่มลงตะกร้า</button>
+                </div>
+            `;
+            
+            // Show product detail section and hide other sections
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('products').style.display = 'none';
+            document.getElementById('product-detail').style.display = 'block';
+            document.getElementById('cart').style.display = 'none';
+        }
+
+        // Function to increase quantity
+        function increaseQuantity(maxStock) {
+            const quantityInput = document.getElementById('product-quantity');
+            if (parseInt(quantityInput.value) < maxStock) {
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+            }
+        }
+
+        // Function to decrease quantity
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById('product-quantity');
+            if (parseInt(quantityInput.value) > 1) {
+                quantityInput.value = parseInt(quantityInput.value) - 1;
+            }
+        }
+
+        // Function to add product to cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const quantity = parseInt(document.getElementById('product-quantity').value);
+            
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                // Update quantity if product already in cart
+                existingItem.quantity += quantity;
+            } else {
+                // Add new item to cart
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: quantity
+                });
+            }
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Show products section
+            showProducts();
+            
+            // Show success message
+            alert(`เพิ่ม ${product.name} จำนวน ${quantity} ชิ้นลงในตะกร้าเรียบร้อยแล้ว`);
+        }
+
+        // Function to update cart count
+        function updateCartCount() {
+            const cartCount = document.querySelector('.cart-count');
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        // Function to display cart
+        function displayCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartSummaryContainer = document.getElementById('cart-summary');
+            
+            if (cart.length === 0) {
+                // Display empty cart message
+                cartItemsContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <p>ตะกร้าสินค้าของคุณว่างเปล่า</p>
+                        <button class="btn" onclick="showProducts()">เลือกซื้อสินค้า</button>
+                    </div>
+                `;
+                cartSummaryContainer.innerHTML = '';
+                return;
+            }
+            
+            // Display cart items
+            let cartItemsHTML = '';
+            cart.forEach(item => {
+                cartItemsHTML += `
+                    <div class="cart-item">
+                        <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+                        <div class="cart-item-info">
+                            <h3 class="cart-item-title">${item.name}</h3>
+                            <p class="cart-item-price">฿${item.price.toLocaleString()}</p>
+                            <div class="cart-item-quantity">
+                                <span>จำนวน: ${item.quantity}</span>
+                                <button class="cart-item-remove" onclick="removeFromCart(${item.id})">ลบ</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItemsContainer.innerHTML = cartItemsHTML;
+            
+            // Calculate cart summary
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const shipping = subtotal > 1000 ? 0 : 50;
+            const total = subtotal + shipping;
+            
+            // Display cart summary
+            cartSummaryContainer.innerHTML = `
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>ยอดรวมสินค้า:</span>
+                        <span>฿${subtotal.toLocaleString()}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>ค่าจัดส่ง:</span>
+                        <span>฿${shipping.toLocaleString()}</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>ยอดรวมทั้งหมด:</span>
+                        <span>฿${total.toLocaleString()}</span>
+                    </div>
+                    <button class="btn checkout-btn" onclick="checkout()">สั่งซื้อสินค้า</button>
+                </div>
+            `;
+        }
+
+        // Function to remove item from cart
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartCount();
+            displayCart();
+        }
+
+        // Function to proceed to checkout
+        function checkout() {
+            // Implement checkout functionality here
+            alert('ขอบคุณสำหรับการสั่งซื้อ! เราจะดำเนินการจัดส่งสินค้าให้คุณโดยเร็วที่สุด');
+            
+            // Clear cart
+            cart = [];
+            updateCartCount();
+            
+            // Redirect to home
+            showHome();
+        }
+
+        // Function to show home section
+        function showHome() {
+            document.getElementById('home').style.display = 'block';
+            document.getElementById('products').style.display = 'block';
+            document.getElementById('product-detail').style.display = 'none';
+            document.getElementById('cart').style.display = 'none';
+        }
+
+        // Function to show products section
+        function showProducts() {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('products').style.display = 'block';
+            document.getElementById('product-detail').style.display = 'none';
+            document.getElementById('cart').style.display = 'none';
+        }
+
+        // Function to show cart section
+        function showCart() {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('products').style.display = 'none';
+            document.getElementById('product-detail').style.display = 'none';
+            document.getElementById('cart').style.display = 'block';
+            
+            // Display cart items
+            displayCart();
+        }
+
+        // Initialize the page
+        window.onload = function() {
+            displayProducts();
+            updateCartCount();
+            showHome();
+        }
+    </script>
+</body>
+</html>
