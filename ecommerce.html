@@ -547,10 +547,10 @@
         <div class="container header-container">
             <div class="logo">ThaiShop</div>
             <ul class="nav-links">
-                <li><a href="#" onclick="showHome()">หน้าหลัก</a></li>
-                <li><a href="#" onclick="showProducts()">สินค้า</a></li>
+                <li><a href="#" onclick="showHome()">Home</a></li>
+                <li><a href="#" onclick="showProducts()">Product</a></li>
                 <li><a href="#" onclick="showCart()" class="cart-icon">
-                    ตะกร้าสินค้า
+                    Cart
                     <span class="cart-count">0</span>
                 </a></li>
             </ul>
@@ -560,16 +560,16 @@
     <!-- Home Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>ยินดีต้อนรับสู่ ThaiShop</h1>
-            <p>ร้านค้าออนไลน์ที่ดีที่สุดสำหรับผลิตภัณฑ์คุณภาพสูง</p>
-            <a href="#" class="btn" onclick="showProducts()">ช้อปเลย</a>
+            <h1>いらっしゃいませ Irashaimase</h1>
+            <p>Dong-Chan Living in Japan Shop (DCI Jap Shop)</p>
+            <a href="#" class="btn" onclick="showProducts()">Shop now</a>
         </div>
     </section>
 
     <!-- Products Section -->
     <section class="products" id="products">
         <div class="container">
-            <h2 class="section-title">สินค้าของเรา</h2>
+            <h2 class="section-title">Collection</h2>
             <div class="products-grid" id="products-grid">
                 <!-- Products will be loaded here -->
             </div>
@@ -588,7 +588,7 @@
     <!-- Cart Section -->
     <section class="cart" id="cart">
         <div class="container">
-            <h2 class="section-title">ตะกร้าสินค้า</h2>
+            <h2 class="section-title">Cart</h2>
             <div id="cart-items">
                 <!-- Cart items will be loaded here -->
             </div>
@@ -606,41 +606,41 @@
             <div class="checkout-container">
                 <div class="checkout-form">
                     <form id="order-form" onsubmit="submitOrder(event)">
-                        <h3>ข้อมูลการจัดส่ง</h3>
+                        <h3>Delivery information</h3>
                         <div class="form-group">
-                            <label for="customer-name">ชื่อ-นามสกุล *</label>
+                            <label for="customer-name">Full name *</label>
                             <input type="text" id="customer-name" required>
                         </div>
                         <div class="form-group">
-                            <label for="customer-email">อีเมล *</label>
+                            <label for="customer-email">Email *</label>
                             <input type="email" id="customer-email" required>
                         </div>
                         <div class="form-group">
-                            <label for="customer-phone">เบอร์โทรศัพท์ *</label>
+                            <label for="customer-phone">Phone *</label>
                             <input type="tel" id="customer-phone" required>
                         </div>
                         <div class="form-group">
-                            <label for="customer-address">ที่อยู่จัดส่ง *</label>
+                            <label for="customer-address">Address *</label>
                             <textarea id="customer-address" rows="4" required></textarea>
                         </div>
-                        <h3>วิธีการชำระเงิน</h3>
+                        <h3>Payment</h3>
                         <div class="payment-methods">
                             <div class="payment-method">
                                 <input type="radio" name="payment" id="payment-bank" value="bank" checked>
-                                <label for="payment-bank">โอนเงินผ่านธนาคาร</label>
+                                <label for="payment-bank">Bank transfer</label>
                             </div>
                             <div class="payment-method">
                                 <input type="radio" name="payment" id="payment-cod" value="cod">
-                                <label for="payment-cod">เก็บเงินปลายทาง (COD)</label>
+                                <label for="payment-cod">Cash on delivery (COD)</label>
                             </div>
                         </div>
                         <div class="bank-details" id="bank-details">
                             <p>โอนเงินมาที่:</p>
-                            <p>ธนาคารกสิกรไทย</p>
-                            <p>เลขที่บัญชี: 123-4-56789-0</p>
-                            <p>ชื่อบัญชี: บริษัท ไทยช็อป จำกัด</p>
+                            <p>KBank</p>
+                            <p>Account number: 174-1-89844-2</p>
+                            <p>ชื่อบัญชี: ทรงพล ท้วมใจดี</p>
                         </div>
-                        <button type="submit" class="btn checkout-btn">ยืนยันการสั่งซื้อ</button>
+                        <button type="submit" class="btn checkout-btn">Confirm order</button>
                     </form>
                 </div>
                 <div class="order-summary-container">
@@ -656,7 +656,7 @@
     <section class="order-success" id="order-success">
         <div class="container">
             <div class="success-container">
-                <h2>ขอบคุณสำหรับการสั่งซื้อ!</h2>
+                <h2>ありがとう ございます — Arigato gozaimasu!</h2>
                 <p>คำสั่งซื้อหมายเลข: <span id="order-id"></span> ได้รับการยืนยันเรียบร้อยแล้ว</p>
                 <p>เราได้ส่งรายละเอียดการสั่งซื้อไปยังอีเมลของคุณแล้ว</p>
                 <p>หากคุณเลือกชำระเงินผ่านการโอนเงิน กรุณาโอนเงินและส่งหลักฐานการโอนเงินภายใน 24 ชั่วโมง</p>
@@ -682,11 +682,11 @@
         const products = [
             {
                 id: 1,
-                name: "เสื้อยืดสีขาว",
+                name: "Meiji jingu - omamori",
                 price: 350,
-                description: "เสื้อยืดคอกลมสีขาวผลิตจากผ้าฝ้าย 100% นุ่มสบาย สวมใส่ได้ทุกโอกาส",
+                description: "เครื่องรางจากศาลเจ้าใหญ่ เมจิ แห่งเมืองโตเกียว",
                 image: "/api/placeholder/400/320",
-                stock: 25
+                stock: 1
             },
             {
                 id: 2,
