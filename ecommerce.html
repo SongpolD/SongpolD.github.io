@@ -355,6 +355,129 @@
             margin-bottom: 20px;
             font-size: 18px;
         }
+
+                /* Checkout */
+        .checkout {
+            padding: 60px 0;
+            display: none;
+        }
+        
+        .checkout-container {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .checkout-form {
+            flex: 3;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .order-summary-container {
+            flex: 2;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        h3 {
+            margin: 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .payment-methods {
+            margin-bottom: 20px;
+        }
+        
+        .payment-method {
+            margin-bottom: 10px;
+        }
+        
+        .bank-details {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        
+        .bank-details p {
+            margin-bottom: 5px;
+        }
+        
+        .order-summary {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .order-summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        
+        .order-total {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* Order Success */
+        .order-success {
+            padding: 60px 0;
+            display: none;
+        }
+        
+        .success-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .success-container h2 {
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+        
+        .success-container p {
+            margin-bottom: 15px;
+        }
+        
+        .success-container .btn {
+            margin-top: 20px;
+        }
         
         /* Footer */
         footer {
@@ -406,6 +529,15 @@
             .cart-item-img {
                 margin-bottom: 10px;
             }
+
+            .checkout-container {
+        flex-direction: column;
+            }
+    
+            .checkout-form, .order-summary-container {
+        width: 100%;
+            }
+            
         }
     </style>
 </head>
@@ -462,6 +594,73 @@
             </div>
             <div id="cart-summary">
                 <!-- Cart summary will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Checkout Section -->
+    <section class="checkout" id="checkout">
+        <div class="container">
+            <h2 class="section-title">ชำระเงิน</h2>
+            <div class="checkout-container">
+                <div class="checkout-form">
+                    <form id="order-form" onsubmit="submitOrder(event)">
+                        <h3>ข้อมูลการจัดส่ง</h3>
+                        <div class="form-group">
+                            <label for="customer-name">ชื่อ-นามสกุล *</label>
+                            <input type="text" id="customer-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-email">อีเมล *</label>
+                            <input type="email" id="customer-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-phone">เบอร์โทรศัพท์ *</label>
+                            <input type="tel" id="customer-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-address">ที่อยู่จัดส่ง *</label>
+                            <textarea id="customer-address" rows="4" required></textarea>
+                        </div>
+                        <h3>วิธีการชำระเงิน</h3>
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <input type="radio" name="payment" id="payment-bank" value="bank" checked>
+                                <label for="payment-bank">โอนเงินผ่านธนาคาร</label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" name="payment" id="payment-cod" value="cod">
+                                <label for="payment-cod">เก็บเงินปลายทาง (COD)</label>
+                            </div>
+                        </div>
+                        <div class="bank-details" id="bank-details">
+                            <p>โอนเงินมาที่:</p>
+                            <p>ธนาคารกสิกรไทย</p>
+                            <p>เลขที่บัญชี: 123-4-56789-0</p>
+                            <p>ชื่อบัญชี: บริษัท ไทยช็อป จำกัด</p>
+                        </div>
+                        <button type="submit" class="btn checkout-btn">ยืนยันการสั่งซื้อ</button>
+                    </form>
+                </div>
+                <div class="order-summary-container">
+                    <div id="order-summary" class="order-summary">
+                        <!-- Order summary will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Order Success Section -->
+    <section class="order-success" id="order-success">
+        <div class="container">
+            <div class="success-container">
+                <h2>ขอบคุณสำหรับการสั่งซื้อ!</h2>
+                <p>คำสั่งซื้อหมายเลข: <span id="order-id"></span> ได้รับการยืนยันเรียบร้อยแล้ว</p>
+                <p>เราได้ส่งรายละเอียดการสั่งซื้อไปยังอีเมลของคุณแล้ว</p>
+                <p>หากคุณเลือกชำระเงินผ่านการโอนเงิน กรุณาโอนเงินและส่งหลักฐานการโอนเงินภายใน 24 ชั่วโมง</p>
+                <button class="btn" onclick="showHome()">กลับไปยังหน้าหลัก</button>
             </div>
         </div>
     </section>
@@ -708,15 +907,47 @@
 
         // Function to proceed to checkout
         function checkout() {
-            // Implement checkout functionality here
-            alert('ขอบคุณสำหรับการสั่งซื้อ! เราจะดำเนินการจัดส่งสินค้าให้คุณโดยเร็วที่สุด');
+            // Show checkout form
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('products').style.display = 'none';
+            document.getElementById('product-detail').style.display = 'none';
+            document.getElementById('cart').style.display = 'none';
+            document.getElementById('checkout').style.display = 'block';
             
-            // Clear cart
-            cart = [];
-            updateCartCount();
+            // Calculate cart summary for checkout page
+            const subtotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            const shipping = subtotal > 1000 ? 0 : 50;
+            const total = subtotal + shipping;
             
-            // Redirect to home
-            showHome();
+            // Display order summary
+            const orderSummaryEl = document.getElementById('order-summary');
+            let orderItemsHTML = '';
+            
+            cart.forEach(item => {
+                orderItemsHTML += `
+                    <div class="order-item">
+                        <div class="order-item-name">${item.name} x ${item.quantity}</div>
+                        <div class="order-item-price">฿${(item.price * item.quantity).toLocaleString()}</div>
+                    </div>
+                `;
+            });
+            
+            orderSummaryEl.innerHTML = `
+                <h3>สรุปรายการสั่งซื้อ</h3>
+                ${orderItemsHTML}
+                <div class="order-summary-row">
+                    <span>ยอดรวมสินค้า:</span>
+                    <span>฿${subtotal.toLocaleString()}</span>
+                </div>
+                <div class="order-summary-row">
+                    <span>ค่าจัดส่ง:</span>
+                    <span>฿${shipping.toLocaleString()}</span>
+                </div>
+                <div class="order-summary-row order-total">
+                    <span>ยอดรวมทั้งหมด:</span>
+                    <span>฿${total.toLocaleString()}</span>
+                </div>
+            `;
         }
 
         // Function to show home section
@@ -746,11 +977,81 @@
             displayCart();
         }
 
+                // Function to submit order
+        function submitOrder(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('customer-name').value;
+            const email = document.getElementById('customer-email').value;
+            const phone = document.getElementById('customer-phone').value;
+            const address = document.getElementById('customer-address').value;
+            
+            // Validate form
+            if (!name || !email || !phone || !address) {
+                alert('กรุณากรอกข้อมูลให้ครบถ้วน');
+                return;
+            }
+            
+            // Create order object
+            const order = {
+                customer: {
+                    name,
+                    email,
+                    phone,
+                    address
+                },
+                items: cart,
+                total: cart.reduce((total, item) => total + (item.price * item.quantity), 0),
+                shipping: cart.reduce((total, item) => total + (item.price * item.quantity), 0) > 1000 ? 0 : 50,
+                orderDate: new Date().toISOString(),
+                status: 'pending'
+            };
+            
+            // In a real application, you would send this data to a server
+            console.log('Order submitted:', order);
+            
+            // Save order to localStorage (for demo purposes)
+            const orders = JSON.parse(localStorage.getItem('orders') || '[]');
+            order.id = 'ORD' + Date.now();
+            orders.push(order);
+            localStorage.setItem('orders', JSON.stringify(orders));
+            
+            // Show success page
+            document.getElementById('checkout').style.display = 'none';
+            document.getElementById('order-success').style.display = 'block';
+            document.getElementById('order-id').textContent = order.id;
+            
+            // Clear cart
+            cart = [];
+            updateCartCount();
+        }
+                // Function to toggle payment details
+        function togglePaymentDetails() {
+            const paymentBank = document.getElementById('payment-bank');
+            const bankDetails = document.getElementById('bank-details');
+            
+            bankDetails.style.display = paymentBank.checked ? 'block' : 'none';
+        }
+
+                // Function to show home section
+        function showHome() {
+            document.getElementById('home').style.display = 'block';
+            document.getElementById('products').style.display = 'block';
+            document.getElementById('product-detail').style.display = 'none';
+            document.getElementById('cart').style.display = 'none';
+            document.getElementById('checkout').style.display = 'none';
+            document.getElementById('order-success').style.display = 'none';
+        }
         // Initialize the page
         window.onload = function() {
             displayProducts();
             updateCartCount();
             showHome();
+            
+            // Add event listeners for payment method
+            document.getElementById('payment-bank').addEventListener('change', togglePaymentDetails);
+            document.getElementById('payment-cod').addEventListener('change', togglePaymentDetails);
         }
     </script>
 </body>
