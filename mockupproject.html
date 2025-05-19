@@ -3,100 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>เซรั่มลดริ้วรอยสำหรับวัย 40+ | Trylagina</title>
+  <title>Trylagina - เซรั่มลดริ้วรอยสำหรับวัย 40+</title>
   <style>
-    body {
-      font-family: sans-serif;
-      line-height: 1.6;
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-      background: #fff8f5;
-      color: #333;
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, section, footer { padding: 20px; text-align: center; }
+    .hero { background-color: #f5f5f5; padding: 40px 20px; }
+    .hero img { max-width: 300px; }
+    .cta-btn, .form-section input[type=submit] {
+      background-color: #d1001f; color: white; padding: 10px 20px; border: none; cursor: pointer;
     }
-    h1, h2 {
-      color: #b84e51;
-    }
-    .highlight {
-      background: #ffdcdc;
-      padding: 10px;
-      border-radius: 8px;
-    }
-    .button {
-      display: inline-block;
-      background: #b84e51;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .reviews, .faq {
-      margin-top: 30px;
-    }
-    .review {
-      background: #fff;
-      padding: 10px;
-      border-left: 4px solid #b84e51;
-      margin-bottom: 10px;
-    }
-    .faq-item {
-      margin-bottom: 10px;
-    }
-    .form {
-      background: #fff;
-      padding: 15px;
-      margin-top: 20px;
-      border-radius: 8px;
-    }
-    .form input[type="text"], .form input[type="tel"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-    }
+    .feature-list { text-align: left; max-width: 600px; margin: 0 auto; }
+    .feature-list li { margin-bottom: 10px; }
+    .form-section input[type=text] {
+      padding: 10px; width: 200px; margin: 5px; }
+    .review { margin-top: 20px; }
+    .faq { text-align: left; max-width: 600px; margin: 0 auto; }
   </style>
 </head>
 <body>
-  <h1>เซรั่มลดริ้วรอย สำหรับวัย 40+</h1>
-  <p class="highlight">ผิวแน่น เต่งตึงใน 7 วัน – ลดริ้วรอยลึกโดยไม่ต้องเลเซอร์</p>
 
-  <h2>เหมาะกับใคร?</h2>
-  <ul>
-    <li>ผู้หญิงวัย 40+ ที่ผิวเริ่มบางและหย่อนคล้อย</li>
-    <li>เคยลองหลายแบรนด์แต่ยังไม่เห็นผล</li>
-    <li>มองหาเซรั่มที่ปลอดภัยและได้ผลจริง</li>
-  </ul>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <!-- ภาพผลิตภัณฑ์หลัก -->
+    <img src="images/trylagina-hero.jpg" alt="Trylagina Serum">
+    <h1>ผิวหน้าดูเด็กลงใน 7 วัน*</h1>
+    <p>เซรั่มพรีเมียมที่ไว้ใจโดยคุณหมู ดิลก และผู้ใช้กว่า 1 ล้านคน</p>
+    <button class="cta-btn">แอดไลน์รับโปรพิเศษ</button>
+  </header>
 
-  <h2>เสียงจากผู้ใช้จริง</h2>
-  <div class="reviews">
-    <div class="review">
-      "อายุ 58 ใช้มา 3 เดือนแล้ว หน้ายิ้มไม่ย่นเลยค่ะ" – คุณเอ๋
-    </div>
-    <div class="review">
-      "เนื้อเซรั่มซึมไว หน้าแน่นขึ้นแบบรู้สึกได้จริง" – คุณแหม่ม
-    </div>
-  </div>
+  <!-- FEATURES SECTION -->
+  <section>
+    <!-- Infographic หรือภาพ Before/After ด้านซ้าย-ขวา -->
+    <img src="images/before-after.jpg" alt="Before After" style="max-width: 100%;">
+    <h2>ทำไมต้อง Trylagina?</h2>
+    <ul class="feature-list">
+      <li>✔ Marine Collagen เข้มข้น ซึมลึก ไม่เหนอะ</li>
+      <li>✔ ลดริ้วรอย จุดด่างดำ เห็นผลไว</li>
+      <li>✔ เหมาะกับวัย 40+ ที่ต้องการดูแลตัวเองอย่างจริงจัง</li>
+      <li>✔ พัฒนาโดยผู้เชี่ยวชาญด้านผิวหนัง</li>
+    </ul>
+  </section>
 
-  <h2>โปรโมชั่นพิเศษ</h2>
-  <p>เซ็ตทดลองขนาดพกพาเพียง <strong>299.-</strong> (เฉพาะวันนี้)</p>
+  <!-- REVIEWS SECTION -->
+  <section class="review">
+    <!-- ภาพรีวิวผู้ใช้จริง หรือ quotes -->
+    <img src="images/review-user.jpg" alt="รีวิวลูกค้า" style="max-width: 100px; border-radius: 50%;">
+    <p>“ใช้แล้วผิวดูสดใสขึ้นจริงค่ะ คนทักว่าหน้าเด็กลง” – คุณส้ม อายุ 52</p>
+  </section>
 
-  <a class="button" href="https://line.me/R/ti/p/@trylagina">สั่งซื้อผ่าน LINE</a>
+  <!-- FORM CTA -->
+  <section class="form-section">
+    <!-- ภาพปุ่ม LINE และกรอกเบอร์มือถือ -->
+    <h3>รับส่วนลดพิเศษเฉพาะวันนี้</h3>
+    <input type="text" placeholder="ใส่เบอร์มือถือของคุณ">
+    <input type="submit" value="รับสิทธิ์">
+    <p>หรือ <a href="https://line.me/R/ti/p/@trylagina">แอดไลน์</a> เพื่อพูดคุยกับเจ้าหน้าที่</p>
+  </section>
 
-  <div class="form">
-    <h2>หรือกรอกแบบฟอร์มให้เราติดต่อกลับ</h2>
-    <form>
-      <input type="text" placeholder="ชื่อ - นามสกุล">
-      <input type="tel" placeholder="เบอร์โทรศัพท์">
-      <input type="text" placeholder="จังหวัด">
-      <button class="button" type="submit">ส่งข้อมูล</button>
-    </form>
-  </div>
+  <!-- FAQ SECTION -->
+  <section class="faq">
+    <h3>คำถามที่พบบ่อย</h3>
+    <p><strong>Q:</strong> ใช้แล้วแพ้ไหม?<br><strong>A:</strong> ผ่านการทดสอบแล้วว่าไม่ระคายเคือง เหมาะกับทุกสภาพผิว</p>
+    <p><strong>Q:</strong> ใช้ได้นานไหม?<br><strong>A:</strong> 1 ขวดใช้ได้ประมาณ 3-4 สัปดาห์</p>
+  </section>
 
-  <div class="faq">
-    <h2>คำถามที่พบบ่อย</h2>
-    <div class="faq-item"><strong>Q:</strong> ผู้สูงวัยใช้ได้ไหม?<br><strong>A:</strong> ได้ค่ะ เหมาะกับวัย 40-70+</div>
-    <div class="faq-item"><strong>Q:</strong> มีส่วนผสมอะไรเด่น?<br><strong>A:</strong> Marine Collagen + สารต้านริ้วรอยจากธรรมชาติ</div>
-    <div class="faq-item"><strong>Q:</strong> ใช้ร่วมกับครีมอื่นได้ไหม?<br><strong>A:</strong> ได้ค่ะ ทา Trylagina ก่อนตัวอื่น</div>
-  </div>
+  <footer>
+    <p>© 2025 Trylagina Thailand</p>
+  </footer>
+
 </body>
 </html>
