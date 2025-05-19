@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>เซรั่มลดริ้วรอยสำหรับวัย 40+ | Trylagina</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+      background: #fff8f5;
+      color: #333;
+    }
+    h1, h2 {
+      color: #b84e51;
+    }
+    .highlight {
+      background: #ffdcdc;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    .button {
+      display: inline-block;
+      background: #b84e51;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .reviews, .faq {
+      margin-top: 30px;
+    }
+    .review {
+      background: #fff;
+      padding: 10px;
+      border-left: 4px solid #b84e51;
+      margin-bottom: 10px;
+    }
+    .faq-item {
+      margin-bottom: 10px;
+    }
+    .form {
+      background: #fff;
+      padding: 15px;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+    .form input[type="text"], .form input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>เซรั่มลดริ้วรอย สำหรับวัย 40+</h1>
+  <p class="highlight">ผิวแน่น เต่งตึงใน 7 วัน – ลดริ้วรอยลึกโดยไม่ต้องเลเซอร์</p>
+
+  <h2>เหมาะกับใคร?</h2>
+  <ul>
+    <li>ผู้หญิงวัย 40+ ที่ผิวเริ่มบางและหย่อนคล้อย</li>
+    <li>เคยลองหลายแบรนด์แต่ยังไม่เห็นผล</li>
+    <li>มองหาเซรั่มที่ปลอดภัยและได้ผลจริง</li>
+  </ul>
+
+  <h2>เสียงจากผู้ใช้จริง</h2>
+  <div class="reviews">
+    <div class="review">
+      "อายุ 58 ใช้มา 3 เดือนแล้ว หน้ายิ้มไม่ย่นเลยค่ะ" – คุณเอ๋
+    </div>
+    <div class="review">
+      "เนื้อเซรั่มซึมไว หน้าแน่นขึ้นแบบรู้สึกได้จริง" – คุณแหม่ม
+    </div>
+  </div>
+
+  <h2>โปรโมชั่นพิเศษ</h2>
+  <p>เซ็ตทดลองขนาดพกพาเพียง <strong>299.-</strong> (เฉพาะวันนี้)</p>
+
+  <a class="button" href="https://line.me/R/ti/p/@trylagina">สั่งซื้อผ่าน LINE</a>
+
+  <div class="form">
+    <h2>หรือกรอกแบบฟอร์มให้เราติดต่อกลับ</h2>
+    <form>
+      <input type="text" placeholder="ชื่อ - นามสกุล">
+      <input type="tel" placeholder="เบอร์โทรศัพท์">
+      <input type="text" placeholder="จังหวัด">
+      <button class="button" type="submit">ส่งข้อมูล</button>
+    </form>
+  </div>
+
+  <div class="faq">
+    <h2>คำถามที่พบบ่อย</h2>
+    <div class="faq-item"><strong>Q:</strong> ผู้สูงวัยใช้ได้ไหม?<br><strong>A:</strong> ได้ค่ะ เหมาะกับวัย 40-70+</div>
+    <div class="faq-item"><strong>Q:</strong> มีส่วนผสมอะไรเด่น?<br><strong>A:</strong> Marine Collagen + สารต้านริ้วรอยจากธรรมชาติ</div>
+    <div class="faq-item"><strong>Q:</strong> ใช้ร่วมกับครีมอื่นได้ไหม?<br><strong>A:</strong> ได้ค่ะ ทา Trylagina ก่อนตัวอื่น</div>
+  </div>
+</body>
+</html>
