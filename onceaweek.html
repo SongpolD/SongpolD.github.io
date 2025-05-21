@@ -5,25 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trylagina - แคมเปญพิเศษสัปดาห์นี้</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #fff9f9; }
-    header, section, footer { padding: 20px; text-align: center; }
-    .hero { background-color: #fff0f0; padding: 40px 20px; }
-    .hero img { max-width: 300px; }
-    .cta-btn, .form-section input[type=submit] {
-      background-color: #d1001f; color: white; padding: 12px 24px; border: none; cursor: pointer; font-size: 16px;
+    /* General Styles */
+    body {
+      font-family: 'Prompt', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff9f9;
+      color: #333;
+      line-height: 1.6;
     }
-    .feature-list, .faq { text-align: left; max-width: 600px; margin: 0 auto; }
-    .feature-list li, .faq p { margin-bottom: 10px; }
+    
+    /* Layout Components */
+    header, section, footer {
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background-color: #fff0f0;
+      padding: 40px 20px;
+      border-bottom: 1px solid #ffe0e0;
+    }
+    
+    .hero img {
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    /* Buttons and Interactive Elements */
+    .cta-btn, .form-section input[type=submit] {
+      background-color: #d1001f;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(209,0,31,0.3);
+    }
+    
+    .cta-btn:hover, .form-section input[type=submit]:hover {
+      background-color: #b5001b;
+      transform: translateY(-2px);
+    }
+    
+    /* Lists and Content Organization */
+    .feature-list, .faq {
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 15px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    
+    .feature-list li, .faq p {
+      margin-bottom: 10px;
+    }
+    
+    /* Form Elements */
+    .form-section {
+      background-color: #fff5f5;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
     .form-section input[type=text] {
-      padding: 12px; width: 250px; margin: 10px; font-size: 16px; }
-    .highlight { color: #d1001f; font-weight: bold; }
+      padding: 12px;
+      width: 250px;
+      margin: 10px;
+      font-size: 16px;
+      border: 1px solid #ffcccc;
+      border-radius: 5px;
+    }
+    
+    /* Text Highlighting */
+    .highlight {
+      color: #d1001f;
+      font-weight: bold;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .form-section input[type=text] {
+        width: 80%;
+      }
+      
+      .hero img {
+        max-width: 200px;
+      }
+    }
+    
+    /* Review Section */
+    .review-section {
+      background-color: #fffafa;
+      border-radius: 8px;
+      padding: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .review-img {
+      border: 3px solid #ffcccc;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #f8e8e8;
+      padding: 15px;
+      font-size: 14px;
+      color: #666;
+    }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <!-- HERO SECTION -->
   <header class="hero">
-    <img src="./images/TL_Logo.jpg" alt="รูปโปรไฟล์" class="profile-img">
+    <img src="./images/TL_Logo.jpg" alt="Trylagina Logo" class="profile-img">
     <h1>🌟 โปรโมชั่นพิเศษเฉพาะสัปดาห์นี้เท่านั้น! 🌟</h1>
     <p class="highlight">คุณแม่วัย 60+ บอกต่อ ใช้แล้วรู้สึกผิวนุ่ม ชุ่มชื้น ริ้วรอยดูจางลง</p>
     <button class="cta-btn">แอดไลน์รับสิทธิ์</button>
@@ -31,27 +139,57 @@
 
   <!-- CAMPAIGN HIGHLIGHT SECTION -->
   <section>
-    <h2>โปรฯ สัปดาห์นี้: "ซื้อ 1 ฟรี 1 + ส่งฟรี!"</h2>
+    <h2>โปรฯ สัปดาห์นี้ 3-6 เท่านั้น: "ซื้อ 1 ฟรี 1 + ส่งฟรี!"</h2>
     <img src="images/week-offer.jpg" alt="โปรโมชั่น" style="max-width: 100%;">
     <ul class="feature-list">
       <li>🎁 แถมฟรี Trylagina ขนาดพกพา</li>
       <li>🚚 ส่งฟรีไม่มีขั้นต่ำ</li>
       <li>👩‍⚕️ ปรึกษาผู้เชี่ยวชาญทาง LINE ฟรี</li>
+      <li>💯 การันตีคืนเงิน 30 วันถ้าไม่พอใจ</li>
     </ul>
   </section>
 
-  <!-- REVIEW QUOTE SECTION -->
+  <!-- PRODUCT DESCRIPTION SECTION -->
   <section>
-    <img src="images/mom-review.jpg" alt="รีวิวคุณแม่" style="max-width: 100px; border-radius: 50%;">
-    <p>“แม่อายุ 64 ใช้แล้วหน้าเนียนขึ้นเยอะเลยค่ะ!” – ลูกสาวคุณแม่สมศรี</p>
+    <h2>Trylagina - เซรั่มบำรุงผิวสำหรับผู้หญิงวัย 60+</h2>
+    <div class="feature-list">
+      <p>✅ สกัดจากธรรมชาติ 100% ไม่มีสารกันเสีย</p>
+      <p>✅ ช่วยลดเลือนริ้วรอย เพิ่มความชุ่มชื้น</p>
+      <p>✅ ผ่านการรับรองจากแพทย์ผิวหนังชั้นนำ</p>
+      <p>✅ เห็นผลภายใน 7 วัน การันตีจากลูกค้ากว่า 10,000 คน</p>
+    </div>
+  </section>
+
+  <!-- REVIEW QUOTE SECTION -->
+  <section class="review-section">
+    <h3>เสียงจากลูกค้าจริง</h3>
+    <img src="images/mom-review.jpg" alt="รีวิวคุณแม่" style="max-width: 100px; border-radius: 50%;" class="review-img">
+    <p>"แม่อายุ 64 ใช้แล้วหน้าเนียนขึ้นเยอะเลยค่ะ!" – ลูกสาวคุณแม่สมศรี</p>
+    <p>"ใช้มา 2 สัปดาห์ รู้สึกว่าผิวกระชับขึ้น ริ้วรอยตื้นลง" – คุณพิมพา อายุ 68 ปี</p>
   </section>
 
   <!-- FORM CTA SECTION -->
   <section class="form-section">
     <h3>รับสิทธิ์โปรฯ สัปดาห์นี้ก่อนหมดเขต!</h3>
-    <input type="text" placeholder="กรอกเบอร์มือถือของคุณ">
-    <input type="submit" value="ขอรับโปร">
+    <p>โปรโมชั่นเหลือเวลาอีก: <span class="highlight" id="countdown">3 วัน 05:15:32</span></p>
+    <form action="/submit-form" method="post">
+      <input type="text" placeholder="กรอกเบอร์มือถือของคุณ" required>
+      <input type="submit" value="ขอรับโปร">
+    </form>
     <p>หรือ <a href="https://line.me/R/ti/p/@trylagina">คลิกแอดไลน์</a> เพื่อพูดคุยกับเจ้าหน้าที่</p>
+  </section>
+
+  <!-- HOW TO USE SECTION -->
+  <section>
+    <h3>วิธีใช้ Trylagina ให้ได้ผลดีที่สุด</h3>
+    <div class="feature-list">
+      <ol>
+        <li>ล้างหน้าให้สะอาดและเช็ดให้แห้ง</li>
+        <li>หยดเซรั่ม 2-3 หยดลงบนฝ่ามือ</li>
+        <li>เกลี่ยให้ทั่วใบหน้าด้วยการแตะเบาๆ</li>
+        <li>ทาเช้า-เย็น เพื่อผลลัพธ์ที่ดีที่สุด</li>
+      </ol>
+    </div>
   </section>
 
   <!-- FAQ SECTION -->
@@ -59,11 +197,75 @@
     <h3>คำถามที่พบบ่อย</h3>
     <p><strong>Q:</strong> โปรโมชั่นนี้หมดเมื่อไร?<br><strong>A:</strong> ภายในวันอาทิตย์นี้เท่านั้น หรือจนกว่าสินค้าจะหมด</p>
     <p><strong>Q:</strong> มีของแถมอะไรบ้าง?<br><strong>A:</strong> ขนาดทดลอง + กระเป๋าเครื่องสำอางสำหรับ 100 คนแรก</p>
+    <p><strong>Q:</strong> ใช้ได้กับผิวแพ้ง่ายหรือไม่?<br><strong>A:</strong> ได้ค่ะ ผ่านการทดสอบกับผิวแพ้ง่ายแล้ว</p>
+    <p><strong>Q:</strong> ส่งสินค้าภายในกี่วัน?<br><strong>A:</strong> จัดส่งภายใน 1-2 วันทำการ</p>
+  </section>
+
+  <!-- TRUST BADGES -->
+  <section>
+    <h4>เชื่อมั่นได้ในคุณภาพ</h4>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      <div>✓ รับประกันคุณภาพ</div>
+      <div>✓ ชำระเงินปลอดภัย</div>
+      <div>✓ ส่งฟรีทั่วประเทศ</div>
+    </div>
   </section>
 
   <footer>
     <p>© 2025 Trylagina Thailand | ข้อเสนอเฉพาะออนไลน์</p>
+    <p>ติดต่อเรา: support@trylagina.co.th | โทร: 02-XXX-XXXX</p>
+    <p>นโยบายความเป็นส่วนตัว | เงื่อนไขการใช้บริการ</p>
   </footer>
 
+  <script>
+    // Simple countdown timer
+    function updateCountdown() {
+      const countdownElement = document.getElementById('countdown');
+      let parts = countdownElement.innerText.split(' ');
+      let days = parseInt(parts[0]);
+      let time = parts[1].split(':');
+      let hours = parseInt(time[0]);
+      let minutes = parseInt(time[1]);
+      let seconds = parseInt(time[2]);
+      
+      seconds--;
+      
+      if (seconds < 0) {
+        seconds = 59;
+        minutes--;
+        
+        if (minutes < 0) {
+          minutes = 59;
+          hours--;
+          
+          if (hours < 0) {
+            hours = 23;
+            days--;
+            
+            if (days < 0) {
+              countdownElement.innerText = "หมดเวลาแล้ว!";
+              return;
+            }
+          }
+        }
+      }
+      
+      countdownElement.innerText = `${days} วัน ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+    
+    // Update countdown every second
+    setInterval(updateCountdown, 1000);
+    
+    // Add animation to CTA buttons
+    const ctaButtons = document.querySelectorAll('.cta-btn, .form-section input[type=submit]');
+    ctaButtons.forEach(button => {
+      button.addEventListener('mouseover', function() {
+        this.style.transform = 'scale(1.05)';
+      });
+      button.addEventListener('mouseout', function() {
+        this.style.transform = 'scale(1)';
+      });
+    });
+  </script>
 </body>
 </html>
