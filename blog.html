@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลทำ Resume - คู่มือสร้าง Resume ที่ได้งาน</title>
+    <meta name="description" content="คู่มือครบถ้วนสำหรับการสร้าง Resume ที่โดดเด่น ประกอบด้วยเทคนิค เทมเพลต และข้อแนะนำจากผู้เชี่ยวชาญ HR">
+    <meta name="keywords" content="Resume, CV, การสมัครงาน, เขียน Resume, สร้าง Resume, หางาน">
+    
+    <!-- Schema Markup for Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "คู่มือการทำ Resume ที่มีประสิทธิภาพ",
+        "description": "แนวทางและเทคนิคในการสร้าง Resume ที่จะช่วยให้คุณได้งานในสายอาชีพที่ต้องการ",
+        "author": {
+            "@type": "Organization",
+            "name": "ทีมผู้เชี่ยวชาญ HR และ Career Coach"
+        },
+        "datePublished": "2025-06-11",
+        "dateModified": "2025-06-11"
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        main {
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #3498db;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #e74c3c, #f39c12);
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #34495e;
+            margin: 1.5rem 0 1rem 0;
+            padding-left: 1rem;
+            border-left: 4px solid #3498db;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            text-align: justify;
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 25px rgba(116, 185, 255, 0.3);
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, #00b894, #00a085);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #fdcb6e;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #fd79a8, #e84393);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 5px solid #fdcb6e;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        th {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+            border-radius: 15px;
+            margin-top: 3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #fd79a8;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .author-info {
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            main {
+                padding: 2rem 1rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ข้อมูลทำ Resume</h1>
+            <p class="subtitle">คู่มือครบถ้วนสำหรับการสร้าง Resume ที่โดดเด่นและได้งาน</p>
+        </header>
+
+        <main>
+            <section class="section fade-in">
+                <h2>Resume คืออะไร?</h2>
+                <p>Resume หรือ CV (Curriculum Vitae) คือเอกสารสรุปประวัติส่วนตัว ประสบการณ์การทำงาน การศึกษา และความสามารถของบุคคล ที่ใช้ในการสมัครงาน Resume ที่ดีจะช่วยสร้างความประทับใจแรกให้กับนายจ้างและเพิ่มโอกาสในการได้รับการพิจารณาเข้าทำงาน</p>
+                
+                <div class="highlight-box">
+                    <h3>ความสำคัญของ Resume</h3>
+                    <p>Resume เป็นเครื่องมือสำคัญที่ช่วยให้นายจ้างได้รู้จักคุณในครั้งแรก ทำหน้าที่เป็น "ตัวแทน" ของคุณในการนำเสนอความสามารถและประสบการณ์ก่อนที่จะมีการสัมภาษณ์</p>
+                </div>
+            </section>
+
+            <section class="section fade-in">
+                <h2>องค์ประกอบสำคัญของ Resume</h2>
+                
+                <h3>1. ข้อมูลส่วนตัว (Personal Information)</h3>
+                <ul>
+                    <li>ชื่อ-นามสกุล (เต็ม)</li>
+                    <li>เบอร์โทรศัพท์ที่ติดต่อได้</li>
+                    <li>อีเมลที่เป็นทางการ</li>
+                    <li>ที่อยู่ (สามารถระบุเพียงจังหวัดได้)</li>
+                    <li>ลิงก์ LinkedIn หรือ Portfolio (ถ้ามี)</li>
+                </ul>
+
+                <h3>2. วัตถุประสงค์ (Objective) หรือ สรุปประวัติ (Summary)</h3>
+                <p>เขียนข้อความสั้นๆ 2-3 ประโยคที่สรุปตัวคุณ เป้าหมายในการทำงาน และสิ่งที่คุณสามารถนำมาให้องค์กร</p>
+
+                <div class="tip-box">
+                    <strong>เคล็ดลับ:</strong> เขียน Objective ให้เฉพาะเจาะจงกับตำแหน่งที่สมัคร หลีกเลี่ยงข้อความทั่วๆ ไป
+                </div>
+
+                <h3>3. ประสบการณ์การทำงาน (Work Experience)</h3>
+                <ul>
+                    <li>ชื่อบริษัท และตำแหน่งงาน</li>
+                    <li>ช่วงเวลาการทำงาน</li>
+                    <li>หน้าที่และความรับผิดชอบ</li>
+                    <li>ผลงานและความสำเร็จที่วัดผลได้</li>
+                </ul>
+
+                <h3>4. การศึกษา (Education)</h3>
+                <ul>
+                    <li>ชื่อสถาบันการศึกษา</li>
+                    <li>ระดับการศึกษาและสาขา</li>
+                    <li>ปีที่จบการศึกษา</li>
+                    <li>เกรดเฉลีย่ (ถ้าดี)</li>
+                </ul>
+
+                <h3>5. ทักษะ (Skills)</h3>
+                <ul>
+                    <li>ทักษะทางเทคนิค (Hard Skills)</li>
+                    <li>ทักษะทางสังคม (Soft Skills)</li>
+                    <li>ความสามารถทางภาษา</li>
+                    <li>โปรแกรมคอมพิวเตอร์ที่ใช้ได้</li>
+                </ul>
+            </section>
+
+            <section class="section fade-in">
+                <h2>เทคนิคการเขียน Resume ที่มีประสิทธิภาพ</h2>
+
+                <h3>1. ใช้คำกริยาที่แสดงถึงการกระทำ (Action Verbs)</h3>
+                <p>เริ่มประโยคด้วยคำกริยาที่แสดงความเป็นผู้นำและความสำเร็จ เช่น:</p>
+                <ul>
+                    <li>จัดการ (Managed)</li>
+                    <li>พัฒนา (Developed)</li>
+                    <li>สร้าง (Created)</li>
+                    <li>เพิ่ม (Increased)</li>
+                    <li>ปรับปรุง (Improved)</li>
+                    <li>นำ (Led)</li>
+                </ul>
+
+                <h3>2. ใช้ตัวเลขเพื่อแสดงผลลัพธ์</h3>
+                <p>การระบุตัวเลขจะทำให้ผลงานของคุณดูเป็นรูปธรรมและน่าเชื่อถือมากขึ้น เช่น:</p>
+                <ul>
+                    <li>"เพิ่มยอดขายได้ 25% ในช่วง 6 เดือน"</li>
+                    <li>"จัดการทีมงาน 15 คน"</li>
+                    <li>"ลดต้นทุนการผลิตได้ 200,000 บาทต่อปี"</li>
+                </ul>
+
+                <h3>3. ปรับแต่ง Resume ให้เหมาะกับแต่ละตำแหน่ง</h3>
+                <p>อย่าใช้ Resume แบบเดียวสำหรับทุกตำแหน่ง ให้ปรับเนื้อหาให้ตรงกับ Job Description และความต้องการของแต่ละบริษัท</p>
+
+                <div class="warning-box">
+                    <strong>ข้อผิดพลาดที่ควรหลีกเลี่ยง:</strong> การใช้ Resume แบบเดียวสำหรับทุกตำแหน่งจะทำให้คุณดูไม่จริงจังกับงานนั้นๆ
+                </div>
+            </section>
+
+            <section class="section fade-in">
+                <h2>รูปแบบและการออกแบบ Resume</h2>
+
+                <h3>รูปแบบ Resume ที่นิยม</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>รูปแบบ</th>
+                            <th>คุณสมบัติ</th>
+                            <th>เหมาะกับ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chronological</td>
+                            <td>เรียงประสบการณ์ตามลำดับเวลา</td>
+                            <td>ผู้มีประสบการณ์ต่อเนื่อง</td>
+                        </tr>
+                        <tr>
+                            <td>Functional</td>
+                            <td>เน้นทักษะมากกว่าประสบการณ์</td>
+                            <td>ผู้เปลี่ยนสายงาน, จบใหม่</td>
+                        </tr>
+                        <tr>
+                            <td>Combination</td>
+                            <td>ผสมผสานทั้งสองแบบ</td>
+                            <td>ผู้มีประสบการณ์หลากหลาย</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>หลักการออกแบบ</h3>
+                <ul>
+                    <li>ใช้ฟอนต์ที่อ่านง่าย เช่น Arial, Calibri, หรือ Times New Roman</li>
+                    <li>ขนาดฟอนต์ 10-12 สำหรับเนื้อหา, 14-16 สำหรับหัวข้อ</li>
+                    <li>ใช้ white space อย่างเหมาะสม</li>
+                    <li>ความยาวไม่เกิน 2 หน้า สำหรับผู้มีประสบการณ์ทั่วไป</li>
+                    <li>บันทึกเป็นไฟล์ PDF เพื่อรักษารูปแบบ</li>
+                </ul>
+            </section>
+
+            <section class="section fade-in">
+                <h2>Resume สำหรับผู้จบใหม่</h2>
+                <p>สำหรับผู้ที่เพิ่งจบการศึกษาและมีประสบการณ์การทำงานน้อย สามารถเน้นในส่วนต่อไปนี้:</p>
+
+                <h3>สิ่งที่ควรเน้น</h3>
+                <ol>
+                    <li><strong>การศึกษา:</strong> วางไว้ส่วนต้นของ Resume</li>
+                    <li><strong>โครงงาน/วิทยานิพนธ์:</strong> ที่เกี่ยวข้องกับงานที่สมัคร</li>
+                    <li><strong>การฝึกงาน:</strong> แม้จะสั้นก็นำมาเขียน</li>
+                    <li><strong>กิจกรรมเสริมหลักสูตร:</strong> ที่แสดงถึงภาวะผู้นำและทีมเวิร์ก</li>
+                    <li><strong>รางวัลและเกียรติยศ:</strong> ทางการเรียนหรือกิจกรรม</li>
+                </ol>
+
+                <div class="tip-box">
+                    <strong>สำหรับผู้จบใหม่:</strong> หากไม่มีประสบการณ์การทำงาน ให้เน้นไปที่โครงงาน กิจกรรม และทักษะที่ได้จากการเรียนแทน
+                </div>
+            </section>
+
+            <section class="section fade-in">
+                <h2>การเตรียม Resume ภาษาอังกฤษ</h2>
+                <p>สำหรับตำแหน่งงานในบริษัทต่างชาติหรือต้องใช้ภาษาอังกฤษในการทำงาน</p>
+
+                <h3>ข้อแตกต่างที่สำคัญ</h3>
+                <ul>
+                    <li>ไม่ต้องใส่รูปถ่าย (ในประเทศตะวันตก)</li>
+                    <li>ไม่ต้องระบุอายุ, สถานภาพสมรส, ศาสนา</li>
+                    <li>เน้นผลงานและความสำเร็จ (Achievement-focused)</li>
+                    <li>ใช้ Past Tense สำหรับงานเก่า, Present Tense สำหรับงานปัจจุบัน</li>
+                </ul>
+
+                <h3>คำศัพท์สำคัญ</h3>
+                <ul>
+                    <li>Experience = ประสบการณ์</li>
+                    <li>Education = การศึกษา</li>
+                    <li>Skills = ทักษะ</li>
+                    <li>Achievements = ความสำเร็จ</li>
+                    <li>References = ผู้อ้างอิง</li>
+                </ul>
+            </section>
+
+            <section class="section fade-in">
+                <h2>ข้อผิดพลาดที่ควรหลีกเลี่ยง</h2>
+
+                <div class="warning-box">
+                    <h3>ข้อผิดพลาดที่พบบ่อย</h3>
+                    <ul>
+                        <li>ข้อมูลติดต่อผิด หรือ อีเมลที่ไม่เป็นทางการ</li>
+                        <li>ข้อผิดพลาดทางไวยากรณ์และการสะกด</li>
+                        <li>ข้อมูลที่ไม่เป็นจริงหรือเกินจริง</li>
+                        <li>Resume ยาวเกินไป (เกิน 3 หน้า)</li>
+                        <li>ใช้ฟอนต์และสีที่อ่านยาก</li>
+                        <li>ไม่ได้ปรับแต่งตามตำแหน่งที่สมัคร</li>
+                        <li>ระบุเงินเดือนที่ต้องการใน Resume</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section fade-in">
+                <h2>การส่ง Resume อย่างมีประสิทธิภาพ</h2>
+
+                <h3>ช่องทางการส่ง Resume</h3>
+                <ol>
+                    <li><strong>เว็บไซต์หางาน:</strong> JobsDB, JobThai, LinkedIn</li>
+                    <li><strong>เว็บไซต์บริษัท:</strong> Career Page ของบริษัทที่สนใจ</li>
+                    <li><strong>อีเมล:</strong> ส่งตรงถึง HR หรือหัวหน้าแผนก</li>
+                    <li><strong>การแนะนำ:</strong> ผ่านเครือข่ายและคนรู้จัก</li>
+                </ol>
+
+                <h3>เทคนิคการส่งอีเมล</h3>
+                <ul>
+                    <li>ใช้ Subject ที่ชัดเจน เช่น "สมัครงานตำแหน่ง Marketing Executive - ชื่อของคุณ"</li>
+                    <li>เขียน Cover Letter สั้นๆ ในตัวอีเมล</li>
+                    <li>แนบ Resume เป็น PDF พร้อมตั้งชื่อไฟล์ให้เหมาะสม</li>
+                    <li>ตรวจสอบการสะกดและไวยากรณ์ก่อนส่ง</li>
+                </ul>
+            </section>
+
+            <div class="author-info">
+                <h3>เกี่ยวกับผู้เขียน</h3>
+                <p>คู่มือนี้จัดทำโดยทีมผู้เชี่ยวชาญด้าน HR และ Career Coach ที่มีประสบการณ์กว่า 10 ปี ในการช่วยเหลือผู้หางานให้ได้งานในสายอาชีพที่ต้องการ</p>
+                <p><strong>อัปเดตล่าสุด:</strong> 11 มิถุนายน 2568</p>
+            </div>
+
+            <div class="cta-section">
+                <h2>พร้อมสร้าง Resume ที่โดดเด่นหรือยัง?</h2>
+                <p>ใช้คู่มือนี้เป็นพื้นฐานในการสร้าง Resume ที่จะช่วยให้คุณได้งานในฝัน</p>
+                <a href="#" class="cta-button">เริ่มสร้าง Resume</a>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // เพิ่มเอฟเฟกต์ fade-in เมื่อ scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Smooth scrolling สำหรับ internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
