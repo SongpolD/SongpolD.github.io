@@ -357,12 +357,14 @@
             animation: slide 50s linear infinite; /* เพิ่มความช้าจาก 30s เป็น 50s (ช้าลง 40%+) */
             align-items: center;
             flex-wrap:no-wrap;
+            flex-direction: row;
         }
 
         .brand-item {
             flex-shrink: 0;
             margin: 0 30px;
             transition: transform 0.3s ease;
+            max-width:200px;
         }
 
         .brand-item:hover {
@@ -579,11 +581,12 @@
                 <div class="brand-track">
                     <!-- แบรนด์จริงที่เคยร่วมงาน -->
                     <div class="brand-item">
-                        <img src="./images/TL_Logo.jpg" alt="Trylagina" onerror="this.src='https://via.placeholder.com/120x60/FF6B6B/FFFFFF?text=TRYLAGINA'">
+                        <img src="./images/TL_Logo.jpg" alt="Trylagina">
                     </div>
                     <div class="brand-item">
-                        <img src="https://logos-world.net/wp-content/uploads/2021/08/Huawei-Logo.png" alt="Huawei Thailand" onerror="this.src='https://via.placeholder.com/120x60/FF0000/FFFFFF?text=HUAWEI'">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/08/Huawei-Logo.png" alt="Huawei Thailand">
                     </div>
+                    <!--
                     <div class="brand-item">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Neta_Auto_logo.svg/2048px-Neta_Auto_logo.svg.png" alt="NETA Thailand" onerror="this.src='https://via.placeholder.com/120x60/0066CC/FFFFFF?text=NETA'">
                     </div>
@@ -598,9 +601,10 @@
                     </div>
                     <div class="brand-item">
                         <img src="https://emmaclinic.com/wp-content/uploads/2021/05/EMMA-CLINIC-LOGO.png" alt="EMMA Clinic" onerror="this.src='https://via.placeholder.com/120x60/FF99CC/FFFFFF?text=EMMA'">
-                    </div>
+                    </div>-->
                     
                     <!-- Duplicate สำหรับ seamless loop -->
+                    <!--
                     <div class="brand-item">
                         <img src="./images/TL_Logo.jpg" alt="Trylagina" onerror="this.src='https://via.placeholder.com/120x60/FF6B6B/FFFFFF?text=TRYLAGINA'">
                     </div>
@@ -622,6 +626,7 @@
                     <div class="brand-item">
                         <img src="https://emmaclinic.com/wp-content/uploads/2021/05/EMMA-CLINIC-LOGO.png" alt="EMMA Clinic" onerror="this.src='https://via.placeholder.com/120x60/FF99CC/FFFFFF?text=EMMA'">
                     </div>
+                    -->
                 </div>
 
 
