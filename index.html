@@ -348,7 +348,7 @@
 
         .brand-track {
             display: inline-flex;
-            animation: slide 30s linear infinite;
+            animation: slide 50s linear infinite; /* เพิ่มความช้าจาก 30s เป็น 50s (ช้าลง 40%+) */
             align-items: center;
         }
 
@@ -416,7 +416,7 @@
             }
             
             .brand-track {
-                animation: slide 25s linear infinite;
+                animation: slide 40s linear infinite; /* ความเร็วสำหรับมือถือ */
             }
         }
 
@@ -566,78 +566,50 @@
             <h3 class="brand-title">Trusted by Leading Brands</h3>
             <div class="brand-slider">
                 <div class="brand-track">
+                    <!-- แบรนด์จริงที่เคยร่วมงาน -->
                     <div class="brand-item">
                         <img src="./images/TL_Logo.jpg" alt="Trylagina" onerror="this.src='https://via.placeholder.com/120x60/FF6B6B/FFFFFF?text=TRYLAGINA'">
                     </div>
                     <div class="brand-item">
-                        <img src="./images/brand2.jpg" alt="Brand 2" onerror="this.src='https://via.placeholder.com/120x60/4ECDC4/FFFFFF?text=BRAND+2'">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/08/Huawei-Logo.png" alt="Huawei Thailand" onerror="this.src='https://via.placeholder.com/120x60/FF0000/FFFFFF?text=HUAWEI'">
                     </div>
                     <div class="brand-item">
-                        <img src="./images/brand3.jpg" alt="Brand 3" onerror="this.src='https://via.placeholder.com/120x60/45B7D1/FFFFFF?text=BRAND+3'">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Neta_Auto_logo.svg/2048px-Neta_Auto_logo.svg.png" alt="NETA Thailand" onerror="this.src='https://via.placeholder.com/120x60/0066CC/FFFFFF?text=NETA'">
                     </div>
                     <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/96CEB4/FFFFFF?text=HONDA" alt="Honda">
+                        <img src="https://hhc-thailand.com/wp-content/uploads/2021/03/HHC-Logo-1.png" alt="HHC Thailand" onerror="this.src='https://via.placeholder.com/120x60/00AA44/FFFFFF?text=HHC'">
                     </div>
                     <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/FECA57/FFFFFF?text=TOYOTA" alt="Toyota">
+                        <img src="https://www.picosure.com/sites/default/files/inline-images/pico-logo.png" alt="Pico Thailand" onerror="this.src='https://via.placeholder.com/120x60/9966CC/FFFFFF?text=PICO'">
                     </div>
                     <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/FF9FF3/FFFFFF?text=NIKE" alt="Nike">
+                        <img src="https://www.theblueskygroup.com/wp-content/uploads/2020/07/bluesky-logo-white.png" alt="The Bluesky Property" onerror="this.src='https://via.placeholder.com/120x60/0099FF/FFFFFF?text=BLUESKY'">
                     </div>
                     <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/F38BA8/FFFFFF?text=ADIDAS" alt="Adidas">
+                        <img src="https://emmaclinic.com/wp-content/uploads/2021/05/EMMA-CLINIC-LOGO.png" alt="EMMA Clinic" onerror="this.src='https://via.placeholder.com/120x60/FF99CC/FFFFFF?text=EMMA'">
+                    </div>
+                    
+                    <!-- Duplicate สำหรับ seamless loop -->
+                    <div class="brand-item">
+                        <img src="./images/TL_Logo.jpg" alt="Trylagina" onerror="this.src='https://via.placeholder.com/120x60/FF6B6B/FFFFFF?text=TRYLAGINA'">
                     </div>
                     <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/A8DADC/FFFFFF?text=APPLE" alt="Apple">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/08/Huawei-Logo.png" alt="Huawei Thailand" onerror="this.src='https://via.placeholder.com/120x60/FF0000/FFFFFF?text=HUAWEI'">
                     </div>
                     <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/457B9D/FFFFFF?text=GOOGLE" alt="Google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Neta_Auto_logo.svg/2048px-Neta_Auto_logo.svg.png" alt="NETA Thailand" onerror="this.src='https://via.placeholder.com/120x60/0066CC/FFFFFF?text=NETA'">
                     </div>
                     <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/1D3557/FFFFFF?text=META" alt="Meta">
+                        <img src="https://hhc-thailand.com/wp-content/uploads/2021/03/HHC-Logo-1.png" alt="HHC Thailand" onerror="this.src='https://via.placeholder.com/120x60/00AA44/FFFFFF?text=HHC'">
                     </div>
                     <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/E63946/FFFFFF?text=COCA+COLA" alt="Coca Cola">
+                        <img src="https://www.picosure.com/sites/default/files/inline-images/pico-logo.png" alt="Pico Thailand" onerror="this.src='https://via.placeholder.com/120x60/9966CC/FFFFFF?text=PICO'">
                     </div>
                     <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/2A9D8F/FFFFFF?text=STARBUCKS" alt="Starbucks">
-                    </div>
-                    <!-- Duplicate for seamless loop -->
-                    <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/FF6B6B/FFFFFF?text=SAMSUNG" alt="Samsung">
+                        <img src="https://www.theblueskygroup.com/wp-content/uploads/2020/07/bluesky-logo-white.png" alt="The Bluesky Property" onerror="this.src='https://via.placeholder.com/120x60/0099FF/FFFFFF?text=BLUESKY'">
                     </div>
                     <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/4ECDC4/FFFFFF?text=LG" alt="LG">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/45B7D1/FFFFFF?text=SONY" alt="Sony">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/96CEB4/FFFFFF?text=HONDA" alt="Honda">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/FECA57/FFFFFF?text=TOYOTA" alt="Toyota">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/FF9FF3/FFFFFF?text=NIKE" alt="Nike">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/F38BA8/FFFFFF?text=ADIDAS" alt="Adidas">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/A8DADC/FFFFFF?text=APPLE" alt="Apple">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/457B9D/FFFFFF?text=GOOGLE" alt="Google">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/1D3557/FFFFFF?text=META" alt="Meta">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/E63946/FFFFFF?text=COCA+COLA" alt="Coca Cola">
-                    </div>
-                    <div class="brand-item">
-                        <img src="https://via.placeholder.com/120x60/2A9D8F/FFFFFF?text=STARBUCKS" alt="Starbucks">
+                        <img src="https://emmaclinic.com/wp-content/uploads/2021/05/EMMA-CLINIC-LOGO.png" alt="EMMA Clinic" onerror="this.src='https://via.placeholder.com/120x60/FF99CC/FFFFFF?text=EMMA'">
                     </div>
                 </div>
             </div>
