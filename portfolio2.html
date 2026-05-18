@@ -352,6 +352,59 @@ body {
   font-weight: 500;
 }
 
+/* ACCOUNT GRID */
+.acct-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 10px;
+  margin-top: 4px;
+}
+.acct-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.acct-vertical {
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.acct-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.3;
+}
+.acct-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.atag {
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  padding: 2px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+.atag-fb  { background: rgba(232,201,122,0.12); color: var(--accent); }
+.atag-gg  { background: rgba(107,197,168,0.12); color: var(--accent2); }
+.atag-tt  { background: rgba(160,160,255,0.10); color: #b0b0ff; }
+.atag-lzd { background: rgba(255,140,80,0.12);  color: #f0a060; }
+.atag-shp { background: rgba(255,100,100,0.10); color: #f08080; }
+.acct-obj {
+  font-size: 12px;
+  color: var(--accent2);
+}
+.acct-notes {
+  padding-left: 14px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.9;
+  margin: 0;
+}
+
 /* RESPONSIVE */
 @media (max-width: 600px) {
   .card-header { grid-template-columns: 1fr auto; padding: 20px; gap: 12px; }
@@ -401,68 +454,193 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <div class="card-tag tag-now">● Current</div>
         <div class="card-title">Performance Marketing Specialist</div>
-        <div class="card-sub">Primal Digital Agency</div>
+        <div class="card-sub">Digital Agency · Full-Service</div>
       </div>
       <span class="card-period">Jul 2025 – Present</span>
       <span class="card-chevron">⌄</span>
     </div>
     <div class="card-body">
-      <p class="card-summary">บริหาร portfolio 15–20 accounts ด้วย budget 1M–4M THB/เดือน ครอบคลุม META, Google, TikTok, Lazada Onsite และ Taboola ขับเคลื่อนด้วยข้อมูลแบบ real-time</p>
+      <p class="card-summary">บริหาร multi-account portfolio ครอบคลุม e-Commerce, B2B Lead Gen, Consumer Electronics และ Education — ขับเคลื่อนด้วย META CPAS, Google SEM/Pmax, TikTok GMV Max, Lazada Onsite และ Taboola พร้อม Looker Studio dashboards real-time</p>
       <div class="tabs">
-        <button class="tab active" onclick="openTab(this,'p-kpi')">KPIs</button>
-        <button class="tab" onclick="openTab(this,'p-campaign')">Campaign</button>
-        <button class="tab" onclick="openTab(this,'p-analysis')">Data Analysis</button>
+        <button class="tab active" onclick="openTab(this,'p-accounts')">Accounts</button>
+        <button class="tab" onclick="openTab(this,'p-campaign')">Platforms & Campaign</button>
+        <button class="tab" onclick="openTab(this,'p-analysis')">Data & Reporting</button>
         <button class="tab" onclick="openTab(this,'p-lazada')">Lazada Onsite · Case Study</button>
       </div>
       <div class="panels">
-        <div class="panel active" id="p-kpi">
-          <div class="kpis">
-            <div class="kpi"><div class="kpi-n">6.2×</div><div class="kpi-l">Peak ROAS — Q1 2025</div></div>
-            <div class="kpi"><div class="kpi-n">4.5×</div><div class="kpi-l">Avg. ROAS</div></div>
-            <div class="kpi"><div class="kpi-n">−28%</div><div class="kpi-l">CPA (TikTok)</div></div>
-            <div class="kpi"><div class="kpi-n">+40%</div><div class="kpi-l">CTR (LINE Ads)</div></div>
+
+        <!-- ACCOUNTS TAB -->
+        <div class="panel active" id="p-accounts">
+          <p class="ptext">บริหาร accounts หลากหลาย vertical ทั้ง SME และ Enterprise ครอบคลุมทั้ง e-Commerce และ B2B Lead Generation</p>
+          <div class="acct-grid">
+
+            <div class="acct-card">
+              <div class="acct-vertical">e-Commerce · Gadget</div>
+              <div class="acct-name">Outdoor Drinkware Brand</div>
+              <div class="acct-tags">
+                <span class="atag atag-fb">META CPAS</span>
+                <span class="atag atag-lzd">Lazada</span>
+                <span class="atag atag-shp">Shopee</span>
+              </div>
+              <div class="acct-obj">Objective: ROAS 5+ · Cost per VC &lt;3 THB</div>
+              <ul class="acct-notes">
+                <li>AWO + Campaign-based CPAS on both platforms</li>
+                <li>Funnel: VC → ATC → Purchase</li>
+              </ul>
+            </div>
+
+            <div class="acct-card">
+              <div class="acct-vertical">e-Commerce · Sneaker & Clothing</div>
+              <div class="acct-name">International Sneaker Brand (SG)</div>
+              <div class="acct-tags">
+                <span class="atag atag-fb">META</span>
+                <span class="atag atag-gg">Google</span>
+              </div>
+              <div class="acct-obj">Objective: ROAS &gt;2 · Traffic</div>
+              <ul class="acct-notes">
+                <li>Dynamic, Advantage+, AWO, REA/TRA campaigns</li>
+                <li>Weekly ROAS monitoring + GA4 traffic analysis</li>
+              </ul>
+            </div>
+
+            <div class="acct-card">
+              <div class="acct-vertical">e-Commerce · Consumer Electronics</div>
+              <div class="acct-name">Consumer Electronics Brand (TH)</div>
+              <div class="acct-tags">
+                <span class="atag atag-fb">META CPAS</span>
+                <span class="atag atag-lzd">Lazada Onsite</span>
+                <span class="atag atag-tt">TikTok</span>
+              </div>
+              <div class="acct-obj">Objective: CPAS ROAS 10+ · Onsite ROAS 26+</div>
+              <ul class="acct-notes">
+                <li>Lazada Onsite: Sponsored Max + MSA</li>
+                <li>TikTok: Video View + Follower growth</li>
+                <li>Multi-platform: Shopee + Lazada CPAS + Social</li>
+              </ul>
+            </div>
+
+            <div class="acct-card">
+              <div class="acct-vertical">B2B · Office Rental</div>
+              <div class="acct-name">Co-working Space (TH)</div>
+              <div class="acct-tags">
+                <span class="atag atag-fb">META</span>
+                <span class="atag atag-gg">Google</span>
+              </div>
+              <div class="acct-obj">Objective: Lead Gen · SQL quality</div>
+              <ul class="acct-notes">
+                <li>SEM: Brand, Generic, Competitor, ENTP campaigns</li>
+                <li>Pmax + META AWO Lead campaigns</li>
+                <li>Power BI lead tracking + quality scoring</li>
+              </ul>
+            </div>
+
+            <div class="acct-card">
+              <div class="acct-vertical">e-Commerce · Mobile Accessories</div>
+              <div class="acct-name">Mobile Parts Brand (TH)</div>
+              <div class="acct-tags">
+                <span class="atag atag-tt">TikTok</span>
+              </div>
+              <div class="acct-obj">Objective: PPV · GMV Growth</div>
+              <ul class="acct-notes">
+                <li>GMV Max + ToFu awareness</li>
+                <li>Auto creative testing with progressive exclusion</li>
+              </ul>
+            </div>
+
+            <div class="acct-card">
+              <div class="acct-vertical">Education · Home Learning</div>
+              <div class="acct-name">Homeschool Platform (TH)</div>
+              <div class="acct-tags">
+                <span class="atag atag-fb">META</span>
+                <span class="atag atag-gg">Google</span>
+                <span class="atag" style="background:rgba(255,200,100,0.12);color:#f0c060;">Taboola</span>
+              </div>
+              <div class="acct-obj">Objective: Awareness + Quality Leads</div>
+              <ul class="acct-notes">
+                <li>AWA → ENG → TRA → LEAD full funnel</li>
+                <li>SEM Brand + Demand Gen replacing Taboola</li>
+                <li>iOS-only upper funnel targeting</li>
+              </ul>
+            </div>
+
           </div>
-          <p class="ptext">Performance Max anti-aging serum campaign ทำ ROAS สูงสุด 6.2× ใน Q1 2025 ขณะที่ LINE Ads broadcast สำหรับกลุ่ม TV viewer อายุ 50+ เพิ่ม CTR ถึง 40% และ TikTok Catalog Sales retargeting ลด CPA 28%</p>
         </div>
+
+        <!-- PLATFORMS TAB -->
         <div class="panel" id="p-campaign">
-          <p class="ptext">บริหารแคมเปญโฆษณาครบวงจร ตั้งแต่วางแผน ตั้งค่า วิเคราะห์ และ optimize ครอบคลุม Prospecting, Retargeting, และ Dynamic Ads</p>
+          <p class="ptext">บริหารแคมเปญครบ stack ทั้ง Paid Social, Search, e-Commerce Onsite และ Native Ads พร้อม tracking ที่แม่นยำ</p>
           <div class="boxes">
             <div class="box">
-              <h4><span class="dot" style="background:var(--accent)"></span>Full-Funnel Platforms</h4>
+              <h4><span class="dot" style="background:var(--accent)"></span>Paid Social</h4>
               <ul>
-                <li>META — CPAS, Web Conversion, Lead Gen</li>
-                <li>Google — SEM, Pmax, YouTube, Shopping</li>
-                <li>TikTok — GMV Max, Branding</li>
-                <li>Lazada Onsite Ads, Taboola</li>
+                <li>META — CPAS (Lazada/Shopee), Dynamic, Advantage+, AWO, Lead Gen</li>
+                <li>TikTok — GMV Max, Video View, ToFu Awareness</li>
+                <li>Engagement, Reach, Traffic campaigns</li>
               </ul>
             </div>
             <div class="box">
-              <h4><span class="dot" style="background:var(--accent2)"></span>Technical Setup</h4>
+              <h4><span class="dot" style="background:var(--accent2)"></span>Search & Display</h4>
               <ul>
-                <li>GTM + GA4 tracking infrastructure</li>
-                <li>100% attribution accuracy</li>
-                <li>UTM tracking + Pixel setup</li>
-                <li>Looker Studio dashboards</li>
+                <li>Google — SEM (Brand/Generic/Competitor), Pmax, Demand Gen</li>
+                <li>Taboola — Native awareness (SQ + Landscape)</li>
+                <li>Budget type: Max Conv Value, Max Conv, Max Click, Target Imp Share</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4><span class="dot" style="background:#b0b0ff"></span>e-Commerce Onsite</h4>
+              <ul>
+                <li>Lazada — Sponsored Max Store, Sponsored Max Product, MSA</li>
+                <li>AWO + Campaign-based budget strategy</li>
+                <li>D-Day surge optimization</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4><span class="dot" style="background:#f0a0a0"></span>Tracking & Setup</h4>
+              <ul>
+                <li>GTM + GA4 · META Pixel · TikTok Pixel</li>
+                <li>UTM tracking across all platforms</li>
+                <li>Looker Studio real-time dashboards</li>
+                <li>Power BI lead quality reporting</li>
               </ul>
             </div>
           </div>
-          <img src="./images/PR CMO ตรวจสุขภาพ.png" alt="Campaign Example" class="full-img">
         </div>
+
+        <!-- DATA TAB -->
         <div class="panel" id="p-analysis">
-          <p class="ptext">ดึงข้อมูลและวิเคราะห์จาก Report ดิบ วัดผล KPIs: ROAS, CPA, AOV, Purchase Value จัดทำ Looker Studio dashboards แบบ real-time เพื่อ monitor pacing goals และ optimize budget allocation</p>
+          <p class="ptext">จัดทำ monthly reports, weekly performance summaries และ QBR decks วิเคราะห์ ROAS, CPA, CPL, AOV, SQL quality และ budget pacing ผ่าน Looker Studio และ raw data</p>
+          <div class="boxes">
+            <div class="box">
+              <h4><span class="dot" style="background:var(--accent)"></span>Report Types</h4>
+              <ul>
+                <li>Monthly MoM comparison (Apr vs Mar)</li>
+                <li>Campaign-level breakdown by type</li>
+                <li>Ad set performance + creative fatigue signals</li>
+                <li>Recommendation & next steps per account</li>
+              </ul>
+            </div>
+            <div class="box">
+              <h4><span class="dot" style="background:var(--accent2)"></span>Key Metrics Tracked</h4>
+              <ul>
+                <li>ROAS, CPA, CPL, Cost per VC/ATC</li>
+                <li>SQL rate + lead quality (B2B)</li>
+                <li>AOV, Purchase Value, Spend pacing</li>
+                <li>Audience fatigue: frequency, CPM, CTR trends</li>
+              </ul>
+            </div>
+          </div>
           <img src="./images/PM_Looker.jpg" alt="Looker Dashboard" class="full-img">
         </div>
 
         <!-- LAZADA ONSITE CASE STUDY -->
         <div class="panel" id="p-lazada">
-          <p class="ptext">Case study: Lazada Onsite Ads — Media Sharing สำหรับ Skincare brand บน Lazada TH ช่วง Jan–Nov 2025 วิเคราะห์ budget placement, campaign structure และ ROAS improvement แบบ before/after</p>
+          <p class="ptext">Case study: Lazada Onsite Ads — Media Sharing สำหรับ Consumer Electronics brand บน Lazada TH ช่วง Jan–Nov 2025 วิเคราะห์ budget placement, campaign structure และ ROAS improvement แบบ before/after</p>
 
-          <!-- SITUATION -->
           <div class="case-block">
-            <div class="case-label">01 · Situation</div>
+            <div class="case-label">01 · Situation · Jan–Aug 2025</div>
             <div class="boxes">
               <div class="box">
-                <h4><span class="dot" style="background:var(--accent)"></span>Jan–Aug 2025 · Baseline</h4>
+                <h4><span class="dot" style="background:var(--accent)"></span>Baseline Setup</h4>
                 <ul>
                   <li>Overall ROAS: <strong style="color:var(--accent)">19.08</strong></li>
                   <li>Sponsored Max Store — Average daily budget</li>
@@ -473,17 +651,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <div class="box">
                 <h4><span class="dot" style="background:var(--accent2)"></span>Key Insight</h4>
                 <ul>
-                  <li>Top products: high orders/revenue, low ad clicks → under-invested</li>
-                  <li>High-click product: clicks many, orders/revenue low → inefficient spend</li>
-                  <li>Opportunity: split campaigns by product performance tier</li>
+                  <li>Top products: high revenue, low clicks → under-budgeted</li>
+                  <li>High-click product: clicks high, revenue low → inefficient spend</li>
+                  <li>Fix: split campaigns by product performance tier</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- ACTION -->
           <div class="case-block">
-            <div class="case-label">02 · Action (Sep–Nov 2025)</div>
+            <div class="case-label">02 · Action · Sep–Nov 2025</div>
             <div class="boxes">
               <div class="box">
                 <h4><span class="dot" style="background:#b0b0ff"></span>Budget Restructure</h4>
@@ -494,37 +671,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </ul>
               </div>
               <div class="box">
-                <h4><span class="dot" style="background:var(--accent)"></span>Optimization Strategy</h4>
+                <h4><span class="dot" style="background:var(--accent)"></span>Optimization</h4>
                 <ul>
-                  <li>Sponsored Max Store → Average daily + D-Day surge budget</li>
-                  <li>Closely optimize DDay, DDay−1, DDay+1</li>
-                  <li>Sponsored MSA → Total budget campaign-based</li>
+                  <li>Max Store → Average daily + D-Day surge</li>
+                  <li>Closely optimize D-Day, D-Day−1, D-Day+1</li>
+                  <li>MSA → Total budget, campaign-based</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <!-- RESULT -->
           <div class="case-block">
             <div class="case-label">03 · Result</div>
             <div class="kpis">
-              <div class="kpi">
-                <div class="kpi-n">27.33</div>
-                <div class="kpi-l">ROAS (Sep–Nov)</div>
-              </div>
-              <div class="kpi">
-                <div class="kpi-n" style="color:var(--accent2)">+42.7%</div>
-                <div class="kpi-l">ROAS vs Baseline</div>
-              </div>
+              <div class="kpi"><div class="kpi-n">27.33</div><div class="kpi-l">ROAS Sep–Nov</div></div>
+              <div class="kpi"><div class="kpi-n" style="color:var(--accent2)">+42.7%</div><div class="kpi-l">vs Baseline</div></div>
+              <div class="kpi"><div class="kpi-n">19.08</div><div class="kpi-l">ROAS Baseline</div></div>
             </div>
           </div>
 
-          <!-- NEXT ACTION -->
           <div class="case-block">
             <div class="case-label">04 · Proposed Next Structure</div>
             <div class="boxes">
               <div class="box">
-                <h4><span class="dot" style="background:var(--accent2)"></span>Campaign Structure</h4>
+                <h4><span class="dot" style="background:var(--accent2)"></span>3-Campaign Architecture</h4>
                 <ul>
                   <li>Sponsored Max Store</li>
                   <li>Sponsored Max Product</li>
@@ -535,8 +705,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h4><span class="dot" style="background:var(--accent)"></span>Budget Approach</h4>
                 <ul>
                   <li>AWO for Sponsored Max campaigns</li>
-                  <li>Campaign-based budget for Sponsored MSA</li>
-                  <li>Scale high-efficiency products separately</li>
+                  <li>Campaign-based for Sponsored MSA</li>
+                  <li>Scale top-tier products separately</li>
                 </ul>
               </div>
             </div>
