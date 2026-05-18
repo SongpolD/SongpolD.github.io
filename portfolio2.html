@@ -341,6 +341,17 @@ body {
   display: block;
 }
 
+/* CASE STUDY BLOCKS */
+.case-block { margin-bottom: 28px; }
+.case-label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
 /* RESPONSIVE */
 @media (max-width: 600px) {
   .card-header { grid-template-columns: 1fr auto; padding: 20px; gap: 12px; }
@@ -401,6 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button class="tab active" onclick="openTab(this,'p-kpi')">KPIs</button>
         <button class="tab" onclick="openTab(this,'p-campaign')">Campaign</button>
         <button class="tab" onclick="openTab(this,'p-analysis')">Data Analysis</button>
+        <button class="tab" onclick="openTab(this,'p-lazada')">Lazada Onsite · Case Study</button>
       </div>
       <div class="panels">
         <div class="panel active" id="p-kpi">
@@ -440,6 +452,97 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="ptext">ดึงข้อมูลและวิเคราะห์จาก Report ดิบ วัดผล KPIs: ROAS, CPA, AOV, Purchase Value จัดทำ Looker Studio dashboards แบบ real-time เพื่อ monitor pacing goals และ optimize budget allocation</p>
           <img src="./images/PM_Looker.jpg" alt="Looker Dashboard" class="full-img">
         </div>
+
+        <!-- LAZADA ONSITE CASE STUDY -->
+        <div class="panel" id="p-lazada">
+          <p class="ptext">Case study: Lazada Onsite Ads — Media Sharing สำหรับ Skincare brand บน Lazada TH ช่วง Jan–Nov 2025 วิเคราะห์ budget placement, campaign structure และ ROAS improvement แบบ before/after</p>
+
+          <!-- SITUATION -->
+          <div class="case-block">
+            <div class="case-label">01 · Situation</div>
+            <div class="boxes">
+              <div class="box">
+                <h4><span class="dot" style="background:var(--accent)"></span>Jan–Aug 2025 · Baseline</h4>
+                <ul>
+                  <li>Overall ROAS: <strong style="color:var(--accent)">19.08</strong></li>
+                  <li>Sponsored Max Store — Average daily budget</li>
+                  <li>Sponsored Discovery — Average daily budget</li>
+                  <li>Sponsored MSA — Total budget</li>
+                </ul>
+              </div>
+              <div class="box">
+                <h4><span class="dot" style="background:var(--accent2)"></span>Key Insight</h4>
+                <ul>
+                  <li>Top products: high orders/revenue, low ad clicks → under-invested</li>
+                  <li>High-click product: clicks many, orders/revenue low → inefficient spend</li>
+                  <li>Opportunity: split campaigns by product performance tier</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ACTION -->
+          <div class="case-block">
+            <div class="case-label">02 · Action (Sep–Nov 2025)</div>
+            <div class="boxes">
+              <div class="box">
+                <h4><span class="dot" style="background:#b0b0ff"></span>Budget Restructure</h4>
+                <ul>
+                  <li>Sponsored Max Store: <strong style="color:var(--text)">50%</strong></li>
+                  <li>Sponsored MSA: <strong style="color:var(--text)">50%</strong></li>
+                  <li>Removed Sponsored Discovery</li>
+                </ul>
+              </div>
+              <div class="box">
+                <h4><span class="dot" style="background:var(--accent)"></span>Optimization Strategy</h4>
+                <ul>
+                  <li>Sponsored Max Store → Average daily + D-Day surge budget</li>
+                  <li>Closely optimize DDay, DDay−1, DDay+1</li>
+                  <li>Sponsored MSA → Total budget campaign-based</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- RESULT -->
+          <div class="case-block">
+            <div class="case-label">03 · Result</div>
+            <div class="kpis">
+              <div class="kpi">
+                <div class="kpi-n">27.33</div>
+                <div class="kpi-l">ROAS (Sep–Nov)</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-n" style="color:var(--accent2)">+42.7%</div>
+                <div class="kpi-l">ROAS vs Baseline</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- NEXT ACTION -->
+          <div class="case-block">
+            <div class="case-label">04 · Proposed Next Structure</div>
+            <div class="boxes">
+              <div class="box">
+                <h4><span class="dot" style="background:var(--accent2)"></span>Campaign Structure</h4>
+                <ul>
+                  <li>Sponsored Max Store</li>
+                  <li>Sponsored Max Product</li>
+                  <li>Sponsored MSA</li>
+                </ul>
+              </div>
+              <div class="box">
+                <h4><span class="dot" style="background:var(--accent)"></span>Budget Approach</h4>
+                <ul>
+                  <li>AWO for Sponsored Max campaigns</li>
+                  <li>Campaign-based budget for Sponsored MSA</li>
+                  <li>Scale high-efficiency products separately</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
