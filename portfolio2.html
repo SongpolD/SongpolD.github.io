@@ -192,6 +192,11 @@ body {
   white-space: nowrap;
 }
 
+.card-header {
+  transition: background 0.2s;
+}
+.card-header:hover { background: rgba(255,255,255,0.03); border-radius: 14px 14px 0 0; }
+
 .card-chevron {
   font-size: 20px;
   color: var(--muted);
@@ -262,7 +267,8 @@ body {
 }
 .kpi-n {
   font-family: 'DM Serif Display', serif;
-  font-size: 2rem;
+  font-size: 2.4rem;
+  letter-spacing: -0.02em;
   color: var(--accent);
   line-height: 1;
   margin-bottom: 5px;
@@ -406,6 +412,20 @@ body {
   margin: 0;
 }
 
+/* HERO SCROLL PROMPT */
+.hero-scroll {
+  margin-top: 48px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
 /* RESPONSIVE */
 @media (max-width: 600px) {
   .card-header { grid-template-columns: 1fr auto; padding: 20px; gap: 12px; }
@@ -413,9 +433,11 @@ body {
   .panels { padding: 20px; }
   .tabs { padding: 16px 20px 0; }
   .card-summary { padding: 18px 20px; }
-  .hero { padding: 40px 5vw 56px; }
+  .hero-scroll { margin-top: 32px; }
+  .hero { padding: 40px 5vw 80px; }
+  .hero h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
   .hero-stats { gap: 28px; }
-  .nav a { padding: 16px 14px; font-size: 12px; }
+  .nav a { padding: 12px 10px; font-size: 11px; letter-spacing: 0; }
 }
 </style>
 </head>
@@ -443,6 +465,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span>META · Google · TikTok · LINE · Taboola · Shopee&Lazada</span>
     </div>
   </div>
+  <div class="hero-scroll">↓ scroll to explore</div>
 </section>
 
 <!-- EXPERIENCE -->
@@ -583,7 +606,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- PLATFORMS TAB -->
         <div class="panel" id="p-campaign">
-          <p class="ptext">บริหารแคมเปญครบ stack ทั้ง Paid Social, Search, e-Commerce Onsite และ Native Ads พร้อม tracking ที่แม่นยำ</p>
+          <p class="ptext">Managed a full campaign stack across Paid Social, Search, e-Commerce Onsite, and Native Ads with precise tracking infrastructure.</p>
           <div class="boxes">
             <div class="box">
               <h4><span class="dot" style="background:var(--accent)"></span>Paid Social</h4>
@@ -623,7 +646,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- DATA TAB -->
         <div class="panel" id="p-analysis">
-          <p class="ptext">จัดทำ monthly reports, weekly performance summaries และ QBR decks วิเคราะห์ ROAS, CPA, CPL, AOV, SQL quality และ budget pacing ผ่าน Looker Studio และ raw data</p>
+          <p class="ptext">Produced monthly reports, weekly performance summaries, and QBR decks — analyzing ROAS, CPA, CPL, AOV, SQL quality, and budget pacing through Looker Studio and raw data.</p>
           <div class="boxes">
             <div class="box">
               <h4><span class="dot" style="background:var(--accent)"></span>Report Types</h4>
@@ -649,7 +672,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         <!-- LAZADA ONSITE CASE STUDY -->
         <div class="panel" id="p-lazada">
-          <p class="ptext">Case study: Lazada Onsite Ads — Media Sharing สำหรับ Consumer Electronics brand บน Lazada TH ช่วง Jan–Nov 2025 วิเคราะห์ budget placement, campaign structure และ ROAS improvement แบบ before/after</p>
+          <p class="ptext">Case study: Lazada Onsite Ads — Media Sharing for a Consumer Electronics brand on Lazada TH, Jan–Nov 2025. Analysis covers budget placement, campaign structure, and ROAS improvement in a before/after comparison.</p>
 
           <div class="case-block">
             <div class="case-label">01 · Situation · Jan–Aug 2025</div>
@@ -744,29 +767,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="card-chevron">⌄</span>
     </div>
     <div class="card-body">
-      <p class="card-summary">บริหาร campaigns บน LINE Ads, Google Ads, META Ads และ TikTok Ads สำหรับ skincare & supplement clients — ROAS เฉลี่ย 4.5× ใน 6 เดือน พร้อม UTM tracking ที่แม่นยำขึ้น 30%</p>
+      <p class="card-summary">Managed campaigns across LINE Ads, Google Ads, META Ads, and TikTok Ads for skincare &amp; supplement clients — achieved an average ROAS of 4.5× within 6 months, with 30% improvement in conversion tracking accuracy via UTM setup.</p>
       <div class="tabs">
         <button class="tab active" onclick="openTab(this,'m-strategy')">Strategy</button>
         <button class="tab" onclick="openTab(this,'m-design')">Creative Design</button>
       </div>
       <div class="panels">
         <div class="panel active" id="m-strategy">
-          <p class="ptext">กลยุทธ์หลักคือ Partnership Ads และ Branded Post เพื่อยกระดับประสิทธิภาพ TaksaToys Brand ผ่านการ collaborate กับ 1577 Shop เปลี่ยนจาก Inbox Ads ที่ผลตอบรับต่ำ มาสู่ CPAS ที่ ROAS ดีกว่าชัดเจน</p>
+          <p class="ptext">Core strategy was Partnership Ads and Branded Posts to elevate TaksaToys Brand performance through collaboration with 1577 Shop — shifting away from low-performing Inbox Ads to CPAS with clearly superior ROAS.</p>
           <div class="boxes">
             <div class="box">
               <h4><span class="dot" style="background:#b0b0ff"></span>Partnership Ads</h4>
               <ul>
-                <li>เริ่มต้นที่ Ads Manager</li>
+                <li>Set up via Ads Manager</li>
                 <li>Static, Video, Carousel, Collection</li>
-                <li>โพสต์บน First Identity Page</li>
+                <li>Published on First Identity Page</li>
               </ul>
             </div>
             <div class="box">
               <h4><span class="dot" style="background:var(--accent)"></span>Branded Post</h4>
               <ul>
-                <li>เริ่มต้นที่ Page</li>
+                <li>Initiated from Page</li>
                 <li>Banner, Infographic, Video</li>
-                <li>โพสต์บนเพจทั้งสองฝ่าย</li>
+                <li>Published on both partner pages</li>
               </ul>
             </div>
           </div>
@@ -795,14 +818,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="card-chevron">⌄</span>
     </div>
     <div class="card-body">
-      <p class="card-summary">บริหาร client accounts บน social media วิเคราะห์ campaign performance จัดทำ monthly reports และประสานงานทีม content, artwork, และ advertising</p>
+      <p class="card-summary">Managed client accounts across social media, analyzed campaign performance, prepared monthly reports, and coordinated content, artwork, and advertising teams.</p>
       <div class="tabs">
         <button class="tab active" onclick="openTab(this,'a-work')">Work Samples</button>
         <button class="tab" onclick="openTab(this,'a-design')">Design Works</button>
       </div>
       <div class="panels">
         <div class="panel active" id="a-work">
-          <p class="ptext">ตัวอย่างงานจริง — Brand Direction, Client Reports, Media Plan & Budget Allocation</p>
+          <p class="ptext">Real work samples — Brand Direction, Client Reports, Media Plan &amp; Budget Allocation</p>
           <div class="links">
             <a class="wlink" href="https://drive.google.com/drive/folders/1x24myztsNN03smKFXCn-OvuI1C-fkaZ-?usp=drive_link" target="_blank">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -819,7 +842,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="panel" id="a-design">
-          <p class="ptext">Creative design solutions สำหรับ clients ในหลายหมวดหมู่</p>
+          <p class="ptext">Creative design solutions for clients across multiple industry verticals.</p>
           <div class="links">
             <a class="wlink" href="https://drive.google.com/drive/folders/18hKDsFYOaLSHoBTN2VdUvAgyymxMpCAo?usp=drive_link" target="_blank">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -843,14 +866,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="card-chevron">⌄</span>
     </div>
     <div class="card-body">
-      <p class="card-summary">ออกแบบสื่อสารภายในองค์กร รับผิดชอบ artwork ประชาสัมพันธ์และสนับสนุนกิจกรรมภายในบริษัท</p>
+      <p class="card-summary">Designed internal communications materials, handled PR artwork, and supported internal company activities.</p>
       <div class="tabs">
         <button class="tab active" onclick="openTab(this,'cmo-art')">Internal Artworks</button>
         <button class="tab" onclick="openTab(this,'cmo-act')">Activities</button>
       </div>
       <div class="panels">
         <div class="panel active" id="cmo-art">
-          <p class="ptext">ออกแบบสื่อประชาสัมพันธ์ภายในองค์กร — health check, การเดินทางต่างประเทศ, และ concept เว็บไซต์ใหม่</p>
+          <p class="ptext">Designed internal PR materials — health check announcement, overseas work travel notice, and new website concept.</p>
           <div class="imgs">
             <img src="./images/PR CMO ตรวจสุขภาพ.png" alt="Health Check PR">
             <img src="./images/PR การเดินทางไปทำงานต่างประเทศ.jpg" alt="Work Travel PR">
@@ -858,7 +881,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
         <div class="panel" id="cmo-act">
-          <p class="ptext">จัดกิจกรรมภายในบริษัทและประสานงานทีม</p>
+          <p class="ptext">Organized internal company events and coordinated team activities.</p>
           <div class="imgs">
             <img src="./images/Agenda Beer Talk.jpg" alt="Beer Talk Agenda">
             <img src="./images/ภาพทีมงาน Beer Talk.jpg" alt="Beer Talk Team">
@@ -868,6 +891,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
+</div>
+
+<div style="text-align:center; padding: 48px 0 80px; color: var(--muted); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;">
+  <a href="#" style="color: var(--muted); text-decoration: none;" onmouseover="this.style.color='#e8c97a'" onmouseout="this.style.color=''">↑ Back to top</a>
 </div>
 
 <!-- BOTTOM NAV -->

@@ -110,19 +110,19 @@
             z-index: 1;
         }
 
-        /* Navigation Bar */
-        nav {
-            background: #2c3e50; /* สีน้ำเงินเข้มสำหรับ navbar */
+        /* Navigation Bar — top nav only, not the site-wide bottom nav */
+        nav:not(.site-nav) {
+            background: #2c3e50;
             text-align: center;
             padding: 1rem 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
-            z-index: 1000; /* ทำให้ navbar อยู่ด้านบนสุด */
+            z-index: 1000;
             border-bottom: 3px solid #3498db;
         }
 
-        nav a {
+        nav:not(.site-nav) a {
             color: white;
             text-decoration: none;
             padding: 0.8rem 1.5rem;
@@ -132,8 +132,8 @@
             border-radius: 8px;
         }
 
-        nav a:hover,
-        nav a.active { /* เพิ่ม active class สำหรับหน้าปัจจุบัน */
+        nav:not(.site-nav) a:hover,
+        nav:not(.site-nav) a.active {
             background-color: #3498db;
             color: white;
         }
@@ -459,6 +459,8 @@
             .author-info {
                 padding: 2rem;
             }
+            .site-nav a { padding: 12px 10px; font-size: 11px; letter-spacing: 0; }
+            nav:not(.site-nav) a { padding: 0.5rem 0.8rem; margin: 0 0.2rem; font-size: 13px; }
         }
 
         @media (max-width: 480px) {
