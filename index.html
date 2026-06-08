@@ -10,6 +10,7 @@
     <meta name="description" content="Resume of Songpol Thuamjaidee — Digital Marketing Professional">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
     <title>Songpol Thuamjaidee — Resume</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +32,7 @@
             line-height: 1.65;
             color: #1a1a1a;
             background: #eef0f3;
+            padding-bottom: 60px;
         }
 
         /* ── Screen wrapper ── */
@@ -270,29 +272,34 @@
             line-height: 1.55;
         }
 
-        /* ── Nav links (screen-only) ── */
+        /* ── Site-wide nav ── */
         .site-nav {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(15,15,15,0.97);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255,255,255,0.08);
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 8px;
-            padding: 14px 28px;
-            background: #f4f5f7;
-            border-top: 1px solid #dde1e7;
+            z-index: 200;
         }
 
         .site-nav a {
-            color: #1a3a5c;
+            color: #888;
             text-decoration: none;
-            font-size: 0.83em;
-            font-weight: 500;
-            padding: 5px 14px;
-            border: 1px solid #c8d6e8;
-            border-radius: 3px;
-            transition: background 0.2s;
+            font-size: 13px;
+            letter-spacing: 0.04em;
+            padding: 17px 20px;
+            transition: color 0.2s;
+            border-top: 2px solid transparent;
+            margin-top: -1px;
+            font-family: inherit;
         }
 
-        .site-nav a:hover { background: #dde8f5; }
+        .site-nav a:hover { color: #f0ede8; }
+        .site-nav a.active { color: #e8c97a; border-top-color: #e8c97a; }
 
         /* ── Footer ── */
         .resume-footer {
@@ -321,6 +328,7 @@
             body {
                 background: #fff;
                 font-size: 11px;
+                padding-bottom: 0;
             }
 
             .page {
@@ -513,7 +521,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Site navigation (screen-only) -->
     <nav class="site-nav">
-        <a href="index.html">Resume</a>
+        <a href="index.html" class="active">Resume</a>
         <a href="portfolio2.html">Portfolio</a>
         <a href="Video.html">Creative</a>
         <a href="ecommerce.html">DCI Jap Shop</a>

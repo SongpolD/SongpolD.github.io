@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KP9RHDKS');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple E-commerce | หน้าหลัก</title>
+    <meta name="description" content="DCI Japan Shop — a portfolio e-commerce project by Songpol Thuamjaidee showcasing Japanese lifestyle products.">
+    <link rel="icon" href="favicon.ico">
+    <title>DCI Jap Shop | Japanese Lifestyle Products</title>
     <style>
         /* Global Styles */
         * {
@@ -16,6 +25,7 @@
         body {
             background-color: #f5f5f5;
             color: #333;
+            padding-bottom: 60px;
         }
         
         .container {
@@ -537,11 +547,40 @@
             .checkout-form, .order-summary-container {
         width: 100%;
             }
-            
         }
+        /* ── Site-wide nav ── */
+        .site-nav {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(15,15,15,0.97);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            z-index: 200;
+        }
+        .site-nav a {
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 0.04em;
+            padding: 17px 20px;
+            transition: color 0.2s;
+            border-top: 2px solid transparent;
+            margin-top: -1px;
+            font-family: inherit;
+        }
+        .site-nav a:hover { color: #f0ede8; }
+        .site-nav a.active { color: #e8c97a; border-top-color: #e8c97a; }
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KP9RHDKS"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <!-- Header -->
     <header>
         <div class="container header-container">
@@ -1054,5 +1093,13 @@
             document.getElementById('payment-cod').addEventListener('change', togglePaymentDetails);
         }
     </script>
+
+    <nav class="site-nav">
+        <a href="index.html">Resume</a>
+        <a href="portfolio2.html">Portfolio</a>
+        <a href="Video.html">Creative</a>
+        <a href="ecommerce.html" class="active">DCI Jap Shop</a>
+        <a href="blog.html">Blog</a>
+    </nav>
 </body>
 </html>

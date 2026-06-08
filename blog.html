@@ -10,7 +10,9 @@
     <meta property="og:title" content="ข้อมูลทำ Resume - คู่มือสร้าง Resume ที่ได้งาน">
     <meta property="og:description" content="คู่มือครบถ้วนสำหรับการสร้าง Resume ที่โดดเด่น ประกอบด้วยเทคนิค เทมเพลต และข้อแนะนำจากผู้เชี่ยวชาญ HR เพื่อช่วยให้คุณได้งานที่ต้องการ">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.yourwebsite.com/resume-guide"> <meta property="og:image" content="https://www.yourwebsite.com/images/resume-guide-thumbnail.jpg"> <meta property="og:image:alt" content="คู่มือสร้าง Resume">
+    <meta property="og:url" content="https://songpold.github.io/blog.html">
+    <meta property="og:image" content="https://songpold.github.io/images/Photo_Beautyday.jpg">
+    <meta property="og:image:alt" content="Songpol Thuamjaidee — Resume Guide">
     
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -24,15 +26,16 @@
         "@type": "Article",
         "headline": "คู่มือการทำ Resume ที่มีประสิทธิภาพ",
         "description": "แนวทางและเทคนิคในการสร้าง Resume ที่จะช่วยให้คุณได้งานในสายอาชีพที่ต้องการ",
-        "image": "https://www.yourwebsite.com/images/resume-guide-banner.jpg", "author": {
-            "@type": "Organization",
-            "name": "ทีมผู้เชี่ยวชาญ HR และ Career Coach",
-            "url": "https://www.yourwebsite.com/about" },
+        "image": "https://songpold.github.io/images/Photo_Beautyday.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "Songpol Thuamjaidee",
+            "url": "https://songpold.github.io" },
         "publisher": {
-            "@type": "Organization",
-            "name": "ชื่อเว็บไซต์ของคุณ", "logo": {
+            "@type": "Person",
+            "name": "Songpol Thuamjaidee", "logo": {
                 "@type": "ImageObject",
-                "url": "https://www.yourwebsite.com/images/logo.png" }
+                "url": "https://songpold.github.io/images/Photo_Beautyday.jpg" }
         },
         "datePublished": "2025-06-11",
         "dateModified": "2025-06-11"
@@ -48,13 +51,14 @@
         }
 
         body {
-            font-family: 'Prompt', sans-serif; /* ใช้ฟอนต์ Prompt เป็นหลัก */
+            font-family: 'Prompt', sans-serif;
             line-height: 1.8;
             color: #333;
-            background: linear-gradient(135deg, #e0f2f7 0%, #c1e4f4 100%); /* เปลี่ยนสีพื้นหลังให้อ่อนลงและดูสบายตา */
+            background: linear-gradient(135deg, #e0f2f7 0%, #c1e4f4 100%);
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            padding-bottom: 60px;
         }
 
         .container {
@@ -474,6 +478,33 @@
             }
         }
 
+        /* ── Site-wide nav ── */
+        .site-nav {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(15,15,15,0.97);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            z-index: 200;
+        }
+        .site-nav a {
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 0.04em;
+            padding: 17px 20px;
+            transition: color 0.2s;
+            border-top: 2px solid transparent;
+            margin-top: -1px;
+            font-family: inherit;
+        }
+        .site-nav a:hover { color: #f0ede8; }
+        .site-nav a.active { color: #e8c97a; border-top-color: #e8c97a; }
+
         /* Animations */
         .fade-in {
             animation: fadeIn 0.8s ease-in;
@@ -493,10 +524,11 @@
         </header>
             
         <nav>
-            <a href="index.html" class="active">Resume</a>
+            <a href="index.html">Resume</a>
             <a href="portfolio2.html">Portfolio</a>
-            <a href="Video.html">Creative Content</a>
+            <a href="Video.html">Creative</a>
             <a href="ecommerce.html">DCI Jap Shop</a>
+            <a href="blog.html" class="active">Blog</a>
         </nav> 
 
         <main>
@@ -755,10 +787,10 @@
         <p>&copy; 2025 ข้อมูลทำ Resume. สงวนลิขสิทธิ์ทุกประการ</p>
         <div class="social-links">
             <a href="https://facebook.com/yourpage" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> <a href="https://linkedin.com/company/yourcompany" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a> </div>
-        <p>พัฒนาและดูแลโดย [ชื่อผู้พัฒนา/บริษัทของคุณ]</p>
+        <p>พัฒนาและดูแลโดย Songpol Thuamjaidee</p>
     </footer>
 
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit-id.js" crossorigin="anonymous"></script> <script>
+    <script>
         // เพิ่มเอฟเฟกต์ fade-in เมื่อ scroll
         const observerOptions = {
             threshold: 0.1,
@@ -809,5 +841,13 @@
             });
         });
     </script>
+
+    <nav class="site-nav">
+        <a href="index.html">Resume</a>
+        <a href="portfolio2.html">Portfolio</a>
+        <a href="Video.html">Creative</a>
+        <a href="ecommerce.html">DCI Jap Shop</a>
+        <a href="blog.html" class="active">Blog</a>
+    </nav>
 </body>
 </html>
