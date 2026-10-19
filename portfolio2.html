@@ -339,6 +339,13 @@ body {
   transition: opacity 0.2s;
 }
 .imgs img:hover { opacity: 0.75; }
+.imgs img, .image-preview { cursor: zoom-in; }
+.image-preview { width: min(100%, 360px); max-height: 240px; object-fit: cover; object-position: top; border-radius: 8px; border: 1px solid var(--border); margin-top: 8px; display: block; cursor: zoom-in; }
+.image-lightbox { border: 0; padding: 24px; max-width: min(96vw, 1400px); max-height: 94vh; margin: auto; background: #111; color: var(--text); border-radius: 12px; }
+.image-lightbox::backdrop { background: rgba(0,0,0,0.88); }
+.image-lightbox img { display: block; max-width: calc(96vw - 48px); max-height: calc(94vh - 90px); margin: 0 auto; object-fit: contain; }
+.image-lightbox figcaption { color: var(--muted); font-size: 13px; text-align: center; padding-top: 10px; }
+.image-lightbox-close { position: absolute; top: 8px; right: 12px; border: 0; background: transparent; color: white; font-size: 28px; cursor: pointer; }
 
 .full-img {
   width: 100%;
@@ -492,6 +499,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button class="tab" onclick="openTab(this,'p-campaign')">Platforms & Campaign</button>
         <button class="tab" onclick="openTab(this,'p-analysis')">Data & Reporting</button>
         <button class="tab" onclick="openTab(this,'p-lazada')">Lazada Onsite · Case Study</button>
+        <button class="tab" onclick="openTab(this,'p-more-accounts')">Other Accounts</button>
       </div>
       <div class="panels">
 
@@ -603,6 +611,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               </ul>
             </div>
 
+          </div>
+        </div>
+
+        <div class="panel" id="p-more-accounts">
+          <p class="ptext">Additional client accounts and campaign responsibilities.</p>
+          <div class="acct-grid">
+            <div class="acct-card"><div class="acct-vertical">B2B · Material Handling</div><div class="acct-name">Toyota Material Handling</div><div class="acct-tags"><span class="atag atag-fb">META</span><span class="atag atag-gg">Google</span></div><div class="acct-obj">Objective: Lead Generation</div><ul class="acct-notes"><li>META Lead and Message campaigns</li><li>Google SEM lead conversion campaigns</li></ul></div>
+            <div class="acct-card"><div class="acct-vertical">e-Commerce · Travel Gear</div><div class="acct-name">Pacsafe</div><div class="acct-tags"><span class="atag atag-lzd">Lazada CPAS</span><span class="atag atag-shp">Shopee CPAS</span><span class="atag atag-tt">TikTok</span></div><div class="acct-obj">Sales and GMV growth</div><ul class="acct-notes"><li>TikTok GMV Max for LIVE and Product</li></ul></div>
+            <div class="acct-card"><div class="acct-vertical">Healthcare · Dental</div><div class="acct-name">SmileBox Dental Clinic</div><div class="acct-tags"><span class="atag atag-gg">Google</span></div><div class="acct-obj">Objective: Lead Generation</div><ul class="acct-notes"><li>Google SEM and Performance Max lead campaigns</li></ul></div>
+            <div class="acct-card"><div class="acct-vertical">Travel</div><div class="acct-name">Flyinggoose</div><div class="acct-tags"><span class="atag atag-gg">Google</span><span class="atag" style="background:rgba(255,200,100,0.12);color:#f0c060;">Taboola</span></div><div class="acct-obj">Objective: Lead Generation</div><ul class="acct-notes"><li>Google SEM and Taboola lead campaigns</li></ul></div>
+            <div class="acct-card"><div class="acct-vertical">Energy · Solar</div><div class="acct-name">Solar PPM</div><div class="acct-tags"><span class="atag atag-gg">Google</span></div><div class="acct-obj">Objective: Lead Generation</div><ul class="acct-notes"><li>Google SEM lead campaigns</li></ul></div>
+            <div class="acct-card"><div class="acct-name">Thonglor Pet</div></div>
           </div>
         </div>
 
@@ -769,13 +789,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="card-chevron">⌄</span>
     </div>
     <div class="card-body">
-      <p class="card-summary">Managed campaigns across LINE Ads, Google Ads, META Ads, and TikTok Ads for skincare &amp; supplement clients — achieved an average ROAS of 4.5× within 6 months, with 30% improvement in conversion tracking accuracy via UTM setup.</p>
+      <p class="card-summary">Managed advertising campaigns across LINE, Google, META, TikTok, and Shopee, with performance measured through ROAS, cost per conversion, and ROI.</p>
       <div class="tabs">
-        <button class="tab active" onclick="openTab(this,'m-strategy')">Strategy</button>
+        <button class="tab active" onclick="openTab(this,'m-scope')">Scope &amp; Tracking</button>
+        <button class="tab" onclick="openTab(this,'m-strategy')">Strategy</button>
         <button class="tab" onclick="openTab(this,'m-design')">Creative Design</button>
       </div>
       <div class="panels">
-        <div class="panel active" id="m-strategy">
+        <div class="panel active" id="m-scope">
+          <p class="ptext">Campaign management, performance measurement, and reporting to guide practical next steps.</p>
+          <div class="boxes">
+            <div class="box"><h4><span class="dot" style="background:var(--accent)"></span>Campaign Management</h4><ul><li>Manage campaigns across LINE, Google, META, TikTok, and Shopee</li><li>Measure ROAS, cost per conversion, and ROI</li><li>Report results and recommend next actions</li></ul></div>
+            <div class="box"><h4><span class="dot" style="background:var(--accent2)"></span>Planning &amp; Tracking</h4><ul><li>Suggest content, budget allocation, and revenue forecasts</li><li>Set up website tracking with GTM, UTM, TikTok Pixel, and Conversion API</li><li>Integrate internal team data sources and automate data collection with Apps Script and APIs</li><li>Standardize key fields such as ad names to improve analysis</li></ul></div>
+          </div>
+        </div>
+        <div class="panel" id="m-strategy">
           <p class="ptext">Core strategy was Partnership Ads and Branded Posts to elevate TaksaToys Brand performance through collaboration with 1577 Shop — shifting away from low-performing Inbox Ads to CPAS with clearly superior ROAS.</p>
           <div class="boxes">
             <div class="box">
@@ -802,7 +830,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="panel" id="m-design">
           <p class="ptext">Creative designs สำหรับ CTA campaigns บน Shopee</p>
-          <img src="./images/CTA_SEM_SHopee1.15 2025.png" alt="Creative Design" class="full-img">
+          <img src="./images/CTA_SEM_SHopee1.15 2025.png" alt="Creative Design" class="image-preview">
         </div>
       </div>
     </div>
@@ -957,11 +985,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="card-body">
       <p class="card-summary">Selected freelance and independent work: AI-generated video production for tech client, SEM keyword research &amp; media planning for food brand, and brand equity scenario analysis.</p>
       <div class="tabs">
-        <button class="tab active" onclick="openTab(this,'f-projects')">Projects</button>
+        <button class="tab active" onclick="openTab(this,'f-lawlink')">Lawlink</button>
+        <button class="tab" onclick="openTab(this,'f-projects')">Projects</button>
         <button class="tab" onclick="openTab(this,'f-sem')">SEM Research</button>
       </div>
       <div class="panels">
-        <div class="panel active" id="f-projects">
+        <div class="panel active" id="f-lawlink">
+          <p class="ptext"><strong>legardy.com (Lawlink)</strong> — maintained advertising spend and improved lead quality through intent-level lead tracking.</p>
+          <div class="kpis">
+            <div class="kpi"><div class="kpi-n">−892.09</div><div class="kpi-l">CPL change (−98.18%)</div></div>
+            <div class="kpi"><div class="kpi-n">THB 65.32</div><div class="kpi-l">Overall CPL (−10.92%)</div></div>
+          </div>
+          <div class="boxes"><div class="box"><h4><span class="dot" style="background:var(--accent2)"></span>Lead Quality &amp; Tracking</h4><ul><li>Maintained spending while improving lead quality</li><li>Tracked leads separately by inquiry intent</li></ul></div></div>
+        </div>
+        <div class="panel" id="f-projects">
           <div class="boxes">
             <div class="box">
               <h4><span class="dot" style="background:#b478ff"></span>AI Video Production — Synnex</h4>
@@ -1022,6 +1059,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <script>
+const imageLightbox=document.createElement("dialog");
+imageLightbox.className="image-lightbox";
+imageLightbox.setAttribute("aria-label","Enlarged image");
+imageLightbox.innerHTML="<button class=\"image-lightbox-close\" type=\"button\" aria-label=\"Close enlarged image\">×</button><figure><img alt=\"\"><figcaption></figcaption></figure>";
+document.body.appendChild(imageLightbox);
+const lightboxImage=imageLightbox.querySelector("img");
+document.querySelectorAll(".imgs img, .image-preview, .full-img").forEach(image=>image.addEventListener("click",()=>{lightboxImage.src=image.src;lightboxImage.alt=image.alt;imageLightbox.querySelector("figcaption").textContent=image.alt;imageLightbox.showModal();}));
+imageLightbox.querySelector(".image-lightbox-close").addEventListener("click",()=>imageLightbox.close());
+imageLightbox.addEventListener("click",event=>{if(event.target===imageLightbox)imageLightbox.close();});
 function toggle(id) {
   document.getElementById(id).classList.toggle('open');
 }
